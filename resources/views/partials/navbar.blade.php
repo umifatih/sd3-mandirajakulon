@@ -1,17 +1,53 @@
-<nav class="bg-white shadow-sm">
-    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-lg shadow-sm z-50">
 
-        <a href="{{ route('home') }}" class="text-2xl font-bold text-[var(--primary)]">
-            Website Sekolah
-        </a>
+    <div class="max-w-7xl mx-auto px-6">
 
-        <ul class="hidden md:flex items-center gap-8">
-            <li><a href="{{ route('home') }}" class="hover:text-[var(--primary)]">Home</a></li>
-            <li><a href="{{ route('profil') }}" class="hover:text-[var(--primary)]">Profil</a></li>
-            <li><a href="{{ route('berita') }}" class="hover:text-[var(--primary)]">Berita</a></li>
-            <li><a href="{{ route('galeri') }}" class="hover:text-[var(--primary)]">Galeri</a></li>
-            <li><a href="{{ route('kontak') }}" class="hover:text-[var(--primary)]">Kontak</a></li>
-        </ul>
+        <div class="flex justify-between items-center h-20">
+
+            <a href="{{ route('home') }}" class="flex items-center gap-3">
+
+                <img
+                    src="https://placehold.co/45x45"
+                    class="w-11 h-11 rounded-full">
+
+                <div>
+
+                    <h1 class="font-bold text-lg">
+                        Website Sekolah
+                    </h1>
+
+                    <p class="text-xs text-gray-500">
+                        Company Profile
+                    </p>
+
+                </div>
+
+            </a>
+
+            <div class="hidden lg:flex gap-8">
+
+                <a href="/" class="hover:text-[#8B5E3C]">Home</a>
+
+                <a href="#">Profil</a>
+
+                <a href="#">Warga Sekolah</a>
+
+                <a href="#">Akademik</a>
+
+                <a href="#">Berita</a>
+
+                <a href="#">Galeri</a>
+
+                <a href="#">Informasi</a>
+
+                <a href="#">PPDB</a>
+
+                <a href="#">Kontak</a>
+
+            </div>
+
+        </div>
 
     </div>
+
 </nav>
