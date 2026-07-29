@@ -15,6 +15,7 @@
         "@tailwindcss/vite": "^4.3.3",
         "alpinejs": "^3.15.12",
         "aos": "^2.3.4",
+        "swiper": "^14.0.7",
         "tailwindcss": "^4.3.3"
     }
 }
