@@ -1,91 +1,118 @@
 <nav
-    id="navbar"
-    x-data="{ mobileMenu:false, scrolled:false }"
+    x-data="{
+        mobileMenu: false,
+        scrolled: false
+    }"
     x-init="
         window.addEventListener('scroll', () => {
-            scrolled = window.scrollY > 50
+            scrolled = window.scrollY > 60
         })
     "
     class="fixed inset-x-0 top-5 z-50 transition-all duration-500">
 
     <div
-        :class="scrolled
-            ? 'bg-white/95 shadow-2xl border border-gray-200 backdrop-blur-xl'
-            : 'bg-white/20 backdrop-blur-md border border-white/20'"
-        class="max-w-7xl mx-auto rounded-2xl transition-all duration-500 px-6 lg:px-8">
+        class="max-w-7xl mx-auto px-4 lg:px-8">
 
-        <div class="h-20 flex items-center justify-between">
+        <div
+            :class="scrolled
+                ? 'bg-white/95 shadow-2xl border border-gray-200 backdrop-blur-xl'
+                : 'bg-white/15 border border-white/20 backdrop-blur-lg'"
+            class="transition-all duration-500 rounded-2xl">
 
-            {{-- ================= LOGO ================= --}}
+            <div class="h-20 px-6 flex items-center justify-between">
 
-            <a
-                href="{{ route('home') }}"
-                class="flex items-center gap-4 group">
+                {{-- ===================== LOGO ===================== --}}
+                <a
+                    href="{{ route('home') }}"
+                    class="flex items-center gap-4 group shrink-0">
 
-                <div
-                    class="relative">
+                    <div class="relative">
 
-                    <img
-                        src="https://placehold.co/60x60?text=Logo"
-                        class="w-14 h-14 rounded-full ring-4 ring-white shadow-lg object-cover transition duration-300 group-hover:scale-105"
-                        alt="Logo">
+                        <img
+                            src="https://placehold.co/60x60?text=Logo"
+                            alt="Logo Sekolah"
+                            class="w-14 h-14 rounded-full object-cover ring-4 ring-white shadow-lg transition duration-300 group-hover:scale-105">
 
-                </div>
+                    </div>
 
-                <div>
+                    <div>
 
-                    <h1
-                        :class="scrolled ? 'text-gray-800' : 'text-white'"
-                        class="font-bold text-lg leading-none transition">
+                        <h1
+                            :class="scrolled ? 'text-gray-800' : 'text-white'"
+                            class="font-bold text-lg leading-tight transition">
 
-                        SD Negeri 3
+                            SD Negeri 3
 
-                    </h1>
+                        </h1>
 
-                    <p
-                        :class="scrolled ? 'text-gray-500' : 'text-gray-200'"
-                        class="text-sm transition">
+                        <p
+                            :class="scrolled ? 'text-gray-500' : 'text-white/80'"
+                            class="text-sm transition">
 
-                        Mandiraja Kulon
+                            Mandiraja Kulon
 
-                    </p>
+                        </p>
 
-                    <span
-                        class="text-xs text-[#D9B99B] font-medium">
+                        <span class="text-xs font-medium text-[#D9B99B]">
 
-                        Website Resmi
+                            Website Resmi
 
-                    </span>
+                        </span>
 
-                </div>
+                    </div>
 
-            </a>
+                </a>
 
-            {{-- ================= MENU DESKTOP ================= --}}
+                {{-- ===================== DESKTOP ===================== --}}
+                @include('partials.nav-desktop')
 
-            @include('partials.nav-desktop')
+                {{-- ===================== MOBILE BUTTON ===================== --}}
+                <button
+                    @click="mobileMenu = !mobileMenu"
+                    class="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl transition"
 
-            {{-- ================= MOBILE BUTTON ================= --}}
+                    :class="scrolled
+                        ? 'bg-[#F8F5F2] text-[#8B5E3C]'
+                        : 'bg-white/20 text-white backdrop-blur'">
 
-            <button
-                @click="mobileMenu=!mobileMenu"
-                class="lg:hidden w-11 h-11 rounded-xl flex items-center justify-center transition"
+                    <i class="fa-solid fa-bars text-xl"></i>
 
-                :class="scrolled
-                    ? 'bg-[#F5F2ED] text-[#8B5E3C]'
-                    : 'bg-white/20 text-white backdrop-blur'">
+                </button>
 
-                <i
-                    class="fa-solid fa-bars text-xl"></i>
-
-            </button>
+            </div>
 
         </div>
 
     </div>
 
-    {{-- ================= MOBILE ================= --}}
+    {{-- ===================== MOBILE MENU ===================== --}}
 
     @include('partials.nav-mobile')
 
 </nav>
+
+<script>
+document.addEventListener("alpine:init", () => {
+
+    window.addEventListener("scroll", () => {
+
+        const navbar = document.querySelector("nav");
+
+        if (window.scrollY > 60) {
+
+            navbar.classList.remove("top-5");
+
+            navbar.classList.add("top-0");
+
+        } else {
+
+            navbar.classList.remove("top-0");
+
+            navbar.classList.add("top-5");
+
+        }
+
+    });
+
+});
+</script>
