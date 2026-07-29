@@ -217,13 +217,112 @@
     </div>
 </section>
 
-{{-- Lanjutan Konten Home Lainnya (Berita, Agenda, dll) --}}
-{{-- Karena warnanya sama dengan gelombang, transisinya akan sangat mulus --}}
-<section class="py-24 bg-[#F8F5F2]">
-    <div class="max-w-7xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold font-['Poppins'] mb-4 text-gray-800">Berita Terbaru</h2>
-        <p class="text-gray-500">Isi konten selanjutnya di sini, sob...</p>
+{{-- ===================== VISI & MISI SECTION ===================== --}}
+<section class="py-20 bg-[#F8F5F2] relative overflow-hidden">
+    
+    {{-- Dekorasi Latar Belakang --}}
+    <div class="absolute top-20 left-10 w-64 h-64 bg-[#E8D8C4] rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
+    <div class="absolute bottom-10 right-10 w-64 h-64 bg-[#D9B99B] rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        
+        {{-- Section Header --}}
+        <div class="text-center mb-16 opacity-0 animate-fade-in-up">
+            <span class="text-[#8B5E3C] font-bold tracking-wider uppercase text-sm mb-3 block">Tujuan Kami</span>
+            <h2 class="text-3xl md:text-5xl font-black text-gray-800 font-['Poppins']">
+                Visi & <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#8B5E3C] to-[#D9B99B]">Misi</span>
+            </h2>
+            <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
+                Komitmen kami dalam memberikan pendidikan terbaik dan membentuk karakter generasi penerus bangsa yang berkualitas.
+            </p>
+        </div>
+
+        {{-- Grid Visi & Misi --}}
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            
+            {{-- ======== CARD VISI (Kiri) ======== --}}
+            <div class="bg-[#8B5E3C] rounded-3xl p-8 md:p-12 shadow-2xl shadow-[#8B5E3C]/30 relative overflow-hidden group transition-transform duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up delay-100">
+                
+                {{-- Efek Kaca/Glow di dalam card Visi --}}
+                <div class="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-150"></div>
+                <div class="absolute -bottom-20 -left-20 w-48 h-48 bg-black/20 rounded-full blur-2xl"></div>
+
+                <div class="relative z-10 flex flex-col h-full justify-center">
+                    <div class="w-16 h-16 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-8 shadow-lg">
+                        <i class="fa-solid fa-eye"></i>
+                    </div>
+                    <h3 class="text-3xl md:text-4xl font-bold text-white font-['Poppins'] mb-6">
+                        Visi Sekolah
+                    </h3>
+                    <div class="relative">
+                        <i class="fa-solid fa-quote-left absolute -top-4 -left-4 text-5xl text-white/10 -z-10"></i>
+                        <p class="text-white/90 text-xl md:text-2xl leading-relaxed font-light italic">
+                            "Terwujudnya peserta didik yang Beriman, Bertaqwa, Cerdas, Terampil, Berkarakter, dan Berwawasan Lingkungan."
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- ======== CARD MISI (Kanan) ======== --}}
+            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 group transition-transform duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up delay-200">
+                
+                <div class="flex items-center gap-5 mb-8">
+                    <div class="w-16 h-16 bg-[#F8F5F2] rounded-2xl flex items-center justify-center text-[#8B5E3C] text-3xl shrink-0 transition-transform duration-500 group-hover:rotate-12">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <h3 class="text-3xl font-bold text-gray-800 font-['Poppins']">Misi Sekolah</h3>
+                </div>
+
+                <ul class="space-y-6">
+                    <li class="flex items-start gap-4">
+                        <div class="w-7 h-7 rounded-full bg-[#D9B99B]/30 flex items-center justify-center text-[#8B5E3C] shrink-0 mt-1">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Menanamkan keimanan dan ketaqwaan melalui pengamalan ajaran agama.
+                        </p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-7 h-7 rounded-full bg-[#D9B99B]/30 flex items-center justify-center text-[#8B5E3C] shrink-0 mt-1">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Mengoptimalkan proses pembelajaran dan bimbingan secara efektif dan efisien.
+                        </p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-7 h-7 rounded-full bg-[#D9B99B]/30 flex items-center justify-center text-[#8B5E3C] shrink-0 mt-1">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Mengembangkan potensi peserta didik di bidang akademik maupun non-akademik melalui kegiatan ekstrakurikuler.
+                        </p>
+                    </li>
+                    <li class="flex items-start gap-4">
+                        <div class="w-7 h-7 rounded-full bg-[#D9B99B]/30 flex items-center justify-center text-[#8B5E3C] shrink-0 mt-1">
+                            <i class="fa-solid fa-check text-xs"></i>
+                        </div>
+                        <p class="text-gray-600 leading-relaxed">
+                            Menumbuhkan budaya disiplin, bersih, dan peduli terhadap kelestarian lingkungan sekolah.
+                        </p>
+                    </li>
+                </ul>
+                
+            </div>
+            
+        </div>
     </div>
 </section>
+
+{{-- ===================== BERITA / ARTIKEL TERBARU ===================== --}}
+<section class="py-24 bg-white relative">
+    {{-- Ini siap untuk kamu isi dengan grid card berita/artikel, sob! --}}
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold font-['Poppins'] mb-4 text-gray-800">Berita & Pengumuman</h2>
+        <p class="text-gray-500 mb-12">Dapatkan informasi terbaru seputar kegiatan SD Negeri 3 Mandiraja Kulon.</p>
+        <!-- Konten Berita Nanti di Sini -->
+    </div>
+</section>
+
 
 @endsection
