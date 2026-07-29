@@ -1,1 +1,14 @@
 @import "tailwindcss";
+
+@import "./theme.css";
+@import "./components.css";
+
+body{
+
+    font-family:'Inter',sans-serif;
+
+    background:var(--background);
+
+    color:var(--text);
+
+}

@@ -1,0 +1,27 @@
+.btn-primary{
+
+    @apply bg-[var(--primary)]
+    text-white
+    px-6
+    py-3
+    rounded-xl
+    font-semibold
+    transition-all
+    duration-300;
+
+}
+
+.btn-primary:hover{
+
+    @apply bg-[var(--primary-dark)];
+
+}
+
+.card-modern{
+
+    @apply bg-white
+    rounded-3xl
+    shadow-lg
+    p-6;
+
+}
