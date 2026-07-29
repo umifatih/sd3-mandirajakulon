@@ -1,64 +1,62 @@
 @extends('layouts.app')
 
-@section('title', 'Home')
+@section('title','Home')
 
 @section('content')
 
-<section class="bg-[#F8F5F2] min-h-screen flex items-center">
+<section class="relative min-h-[90vh] overflow-hidden">
 
-    <div class="max-w-7xl mx-auto px-6 lg:px-10">
+    <img
+        src="https://placehold.co/1920x1080?text=Banner+Sekolah"
+        class="absolute inset-0 w-full h-full object-cover">
 
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div class="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/20"></div>
 
-            <div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 h-full flex items-center pt-20">
 
-                <span class="inline-block bg-[#E8D8C4] text-[#8B5E3C] px-4 py-2 rounded-full text-sm font-semibold">
-                    Website Resmi Sekolah
+        <div class="max-w-3xl text-white">
+
+            <span class="bg-white/20 backdrop-blur px-5 py-2 rounded-full">
+
+                Website Resmi Sekolah
+
+            </span>
+
+            <h1 class="mt-8 text-6xl font-black leading-tight">
+
+                Mencetak Generasi
+
+                <span class="text-[#E8D8C4]">
+
+                    Berprestasi
+
                 </span>
 
-                <h1 class="mt-6 text-5xl lg:text-6xl font-bold leading-tight text-gray-800">
+            </h1>
 
-                    Selamat Datang
-                    <br>
+            <p class="mt-6 text-xl leading-9">
 
-                    <span class="text-[#8B5E3C]">
-                        Website Sekolah
-                    </span>
+                Selamat datang di website resmi sekolah.
+                Semua informasi sekolah dapat diakses secara cepat,
+                mudah dan transparan.
 
-                </h1>
+            </p>
 
-                <p class="mt-6 text-lg text-gray-600 leading-8">
+            <div class="mt-10 flex gap-5">
 
-                    Template website sekolah modern yang dapat dikelola melalui dashboard admin.
-                    Cocok digunakan oleh SD, SMP maupun SMA.
+                <a href="#"
+                    class="bg-[#8B5E3C] px-8 py-4 rounded-xl">
 
-                </p>
+                    Profil Sekolah
 
-                <div class="mt-10 flex gap-4">
+                </a>
 
-                    <a href="#"
-                        class="bg-[#8B5E3C] hover:bg-[#71492D] text-white px-8 py-4 rounded-xl transition">
+                <a href="#"
+                    class="bg-white text-black px-8 py-4 rounded-xl">
 
-                        Profil Sekolah
+                    PPDB
 
-                    </a>
-
-                    <a href="#"
-                        class="border border-[#8B5E3C] text-[#8B5E3C] px-8 py-4 rounded-xl hover:bg-[#8B5E3C] hover:text-white transition">
-
-                        PPDB
-
-                    </a>
-
-                </div>
-
-            </div>
-
-            <div class="hidden lg:flex justify-center">
-
-                <img
-                    src="https://placehold.co/600x500?text=Foto+Sekolah"
-                    class="rounded-3xl shadow-2xl">
+                </a>
 
             </div>
 

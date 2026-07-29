@@ -1,53 +1,91 @@
-<nav class="fixed top-0 left-0 w-full bg-white/90 backdrop-blur-lg shadow-sm z-50">
+<nav
+    id="navbar"
+    x-data="{ mobileMenu:false, scrolled:false }"
+    x-init="
+        window.addEventListener('scroll', () => {
+            scrolled = window.scrollY > 50
+        })
+    "
+    class="fixed inset-x-0 top-5 z-50 transition-all duration-500">
 
-    <div class="max-w-7xl mx-auto px-6">
+    <div
+        :class="scrolled
+            ? 'bg-white/95 shadow-2xl border border-gray-200 backdrop-blur-xl'
+            : 'bg-white/20 backdrop-blur-md border border-white/20'"
+        class="max-w-7xl mx-auto rounded-2xl transition-all duration-500 px-6 lg:px-8">
 
-        <div class="flex justify-between items-center h-20">
+        <div class="h-20 flex items-center justify-between">
 
-            <a href="{{ route('home') }}" class="flex items-center gap-3">
+            {{-- ================= LOGO ================= --}}
 
-                <img
-                    src="https://placehold.co/45x45"
-                    class="w-11 h-11 rounded-full">
+            <a
+                href="{{ route('home') }}"
+                class="flex items-center gap-4 group">
+
+                <div
+                    class="relative">
+
+                    <img
+                        src="https://placehold.co/60x60?text=Logo"
+                        class="w-14 h-14 rounded-full ring-4 ring-white shadow-lg object-cover transition duration-300 group-hover:scale-105"
+                        alt="Logo">
+
+                </div>
 
                 <div>
 
-                    <h1 class="font-bold text-lg">
-                        Website Sekolah
+                    <h1
+                        :class="scrolled ? 'text-gray-800' : 'text-white'"
+                        class="font-bold text-lg leading-none transition">
+
+                        SD Negeri 3
+
                     </h1>
 
-                    <p class="text-xs text-gray-500">
-                        Company Profile
+                    <p
+                        :class="scrolled ? 'text-gray-500' : 'text-gray-200'"
+                        class="text-sm transition">
+
+                        Mandiraja Kulon
+
                     </p>
+
+                    <span
+                        class="text-xs text-[#D9B99B] font-medium">
+
+                        Website Resmi
+
+                    </span>
 
                 </div>
 
             </a>
 
-            <div class="hidden lg:flex gap-8">
+            {{-- ================= MENU DESKTOP ================= --}}
 
-                <a href="/" class="hover:text-[#8B5E3C]">Home</a>
+            @include('partials.nav-desktop')
 
-                <a href="#">Profil</a>
+            {{-- ================= MOBILE BUTTON ================= --}}
 
-                <a href="#">Warga Sekolah</a>
+            <button
+                @click="mobileMenu=!mobileMenu"
+                class="lg:hidden w-11 h-11 rounded-xl flex items-center justify-center transition"
 
-                <a href="#">Akademik</a>
+                :class="scrolled
+                    ? 'bg-[#F5F2ED] text-[#8B5E3C]'
+                    : 'bg-white/20 text-white backdrop-blur'">
 
-                <a href="#">Berita</a>
+                <i
+                    class="fa-solid fa-bars text-xl"></i>
 
-                <a href="#">Galeri</a>
-
-                <a href="#">Informasi</a>
-
-                <a href="#">PPDB</a>
-
-                <a href="#">Kontak</a>
-
-            </div>
+            </button>
 
         </div>
 
     </div>
+
+    {{-- ================= MOBILE ================= --}}
+
+    @include('partials.nav-mobile')
 
 </nav>

@@ -12,3 +12,62 @@ body{
     color:var(--text);
 
 }
+
+@keyframes runningText {
+
+    from {
+        transform: translateX(100%);
+    }
+
+    to {
+        transform: translateX(-100%);
+    }
+
+}
+
+.animate-running {
+
+    display: inline-block;
+
+    animation: runningText 25s linear infinite;
+
+}
+
+.nav-link{
+    @apply relative py-2 transition duration-300 hover:text-[#8B5E3C];
+}
+
+.nav-link::after{
+    content:"";
+    @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-[#8B5E3C] transition-all duration-300;
+}
+
+.nav-link:hover::after{
+    @apply w-full;
+}
+
+.dropdown-menu{
+    @apply absolute left-0 mt-6 w-72 overflow-hidden rounded-3xl
+    bg-white/95 backdrop-blur-xl border border-gray-100
+    shadow-2xl p-2;
+}
+
+.dropdown-item{
+    @apply flex items-center gap-3 rounded-xl
+    px-4 py-3 text-gray-700 transition-all
+    hover:bg-[#F8F5F2] hover:translate-x-1;
+}
+
+.dropdown-item i{
+    @apply text-[#8B5E3C] w-5;
+}
+
+.action-btn{
+    @apply w-11 h-11 rounded-full
+    bg-[#F8F5F2]
+    text-gray-600
+    hover:bg-[#8B5E3C]
+    hover:text-white
+    transition-all duration-300
+    hover:scale-105;
+}
