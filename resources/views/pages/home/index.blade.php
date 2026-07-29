@@ -11,7 +11,7 @@
     </h1>
 
     <p class="text-center mt-5 text-gray-600">
-        Template CMS Sekolah Modern
+        Mandirajakulon, Kecamatan Mandiraja, Kabupaten Banjarnegara, Provinsi Jawa Tengah, Indonesia
     </p>
 
 </div>
