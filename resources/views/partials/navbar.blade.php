@@ -53,7 +53,7 @@
 
                         </p>
 
-                        <span class="text-xs font-medium text-[#D9B99B]">
+                        <span class="text-xs font-medium text-yellow-300">
 
                             Website Resmi
 
@@ -250,7 +250,7 @@
 
                         <a
                             href="#"
-                            class="bg-[#8B5E3C] hover:bg-[#6F4A2D]
+                            class="bg-red-600 hover:bg-red-700
                             text-white px-6 py-2.5 rounded-full
                             font-semibold shadow-lg
                             hover:scale-105 transition">
@@ -269,7 +269,7 @@
                     class="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl transition"
 
                     :class="scrolled
-                        ? 'bg-[#F8F5F2] text-[#8B5E3C]'
+                        ? 'bg-red-50 text-red-600'
                         : 'bg-white/20 text-white backdrop-blur'">
 
                     <i class="fa-solid fa-bars text-xl"></i>
@@ -297,7 +297,7 @@
         <div class="px-6 py-6 space-y-2">
 
             <a href="{{ route('home') }}"
-                class="block py-3 font-medium hover:text-[#8B5E3C]">
+                class="block py-3 font-medium hover:text-red-600">
                 Home
             </a>
 
@@ -306,7 +306,7 @@
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#8B5E3C]">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-red-600">
 
                     Profil
 
@@ -337,7 +337,7 @@
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#8B5E3C]">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-red-600">
 
                     Warga Sekolah
 
@@ -364,7 +364,7 @@
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#8B5E3C]">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-red-600">
 
                     Akademik
 
@@ -395,7 +395,7 @@
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#8B5E3C]">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-red-600">
 
                     Informasi
 
@@ -426,21 +426,21 @@
             <div class="flex gap-3">
 
                 <button
-                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-[#8B5E3C] hover:text-white transition">
+                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-red-600 hover:text-white transition">
 
                     <i class="fa-solid fa-magnifying-glass"></i>
 
                 </button>
 
                 <button
-                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-[#8B5E3C] hover:text-white transition">
+                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-red-600 hover:text-white transition">
 
                     <i class="fa-solid fa-moon"></i>
 
                 </button>
 
                 <a href="#"
-                    class="flex-1 bg-[#8B5E3C] text-center text-white rounded-xl py-3 font-semibold hover:bg-[#6F4A2D] transition">
+                    class="flex-1 bg-red-600 text-center text-white rounded-xl py-3 font-semibold hover:bg-red-700 transition">
 
                     Login Admin
 
