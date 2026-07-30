@@ -213,13 +213,8 @@
     </div>
 </section>
 
-<<<<<<< HEAD
 {{-- ===================== VISI & MISI SEKOLAH (MODERN CARD STYLE) ===================== --}}
 <section class="py-16 md:py-20 bg-[#F0E6D8] relative">
-=======
-{{-- ===================== VISI & MISI SEKOLAH (MODERN CENTERED) ===================== --}}
-<section class="py-20 bg-[#F8F5F2] relative">
->>>>>>> e2ce3a143a1afdbdd25c93013e88c09431be942f
     
     {{-- Aksen Latar Ringan --}}
     <div class="absolute top-1/4 left-10 w-32 h-32 bg-[#E8D8C4]/40 rounded-full blur-3xl pointer-events-none"></div>
@@ -234,7 +229,6 @@
             <div class="w-20 h-1.5 bg-[#8B5E3C] mx-auto mt-6 rounded-full"></div>
         </div>
 
-<<<<<<< HEAD
         {{-- VISI CARD --}}
         <div class="max-w-4xl mx-auto bg-white rounded-2xl p-6 md:p-10 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-white text-center mb-10 relative transform transition-all hover:-translate-y-1 hover:shadow-[0_15px_50px_rgb(0,0,0,0.06)] group">
             
@@ -246,24 +240,10 @@
             <h3 class="text-gray-400 uppercase tracking-widest text-xs font-bold mb-5 mt-3">Visi Utama</h3>
             
             <p class="text-xl md:text-2xl text-gray-700 font-light leading-snug font-['Poppins']">
-=======
-        {{-- VISI CARD (TAMPIL UTAMA DI TENGAH) --}}
-        <div class="max-w-4xl mx-auto bg-white rounded-3xl p-10 md:p-14 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-white text-center mb-20 relative transform transition-all hover:-translate-y-1 hover:shadow-[0_15px_50px_rgb(0,0,0,0.06)] group">
-            
-            {{-- Floating Icon Visi --}}
-            <div class="absolute -top-7 left-1/2 -translate-x-1/2 w-14 h-14 bg-[#8B5E3C] text-white rounded-2xl rotate-3 flex items-center justify-center text-2xl shadow-lg group-hover:rotate-12 transition-transform duration-300">
-                <i class="fa-regular fa-lightbulb"></i>
-            </div>
-            
-            <h3 class="text-gray-400 uppercase tracking-widest text-sm font-bold mb-6 mt-4">Visi Utama</h3>
-            
-            <p class="text-2xl md:text-3xl text-gray-700 font-light leading-relaxed font-['Poppins']">
->>>>>>> e2ce3a143a1afdbdd25c93013e88c09431be942f
                 "Terwujudnya Peserta Didik yang <span class="font-bold text-[#8B5E3C]">Beriman, Cerdas, Terampil, Berkarakter,</span> dan Berwawasan Lingkungan."
             </p>
         </div>
 
-<<<<<<< HEAD
         {{-- MISI CARD --}}
         <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-white relative transform transition-all hover:-translate-y-1 hover:shadow-[0_15px_50px_rgb(0,0,0,0.06)] group">
             
@@ -400,59 +380,6 @@
                 <span>Lihat Semua Foto</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
-=======
-        {{-- MISI GRID (4 KOTAK DI BAWAH) --}}
-        <div class="max-w-6xl mx-auto">
-            <h3 class="text-center text-2xl font-bold text-gray-800 font-['Poppins'] mb-10">Misi Kami</h3>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                
-                {{-- Misi Item 1 --}}
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group cursor-default">
-                    <div class="w-12 h-12 mx-auto bg-[#F8F5F2] text-[#8B5E3C] rounded-full flex items-center justify-center text-xl font-black mb-5 group-hover:bg-[#8B5E3C] group-hover:text-white transition-colors">
-                        01
-                    </div>
-                    <h4 class="font-bold text-gray-800 mb-3 text-lg font-['Poppins']">Iman & Taqwa</h4>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">
-                        Menanamkan keyakinan dan ketaqwaan melalui pengamalan ajaran agama secara nyata dalam kehidupan sehari-hari.
-                    </p>
-                </div>
-
-                {{-- Misi Item 2 --}}
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group cursor-default">
-                    <div class="w-12 h-12 mx-auto bg-[#F8F5F2] text-[#8B5E3C] rounded-full flex items-center justify-center text-xl font-black mb-5 group-hover:bg-[#8B5E3C] group-hover:text-white transition-colors">
-                        02
-                    </div>
-                    <h4 class="font-bold text-gray-800 mb-3 text-lg font-['Poppins']">Inovatif</h4>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">
-                        Mengoptimalkan proses pembelajaran secara aktif, kreatif, efektif, dan menyenangkan (PAKEM).
-                    </p>
-                </div>
-
-                {{-- Misi Item 3 --}}
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group cursor-default">
-                    <div class="w-12 h-12 mx-auto bg-[#F8F5F2] text-[#8B5E3C] rounded-full flex items-center justify-center text-xl font-black mb-5 group-hover:bg-[#8B5E3C] group-hover:text-white transition-colors">
-                        03
-                    </div>
-                    <h4 class="font-bold text-gray-800 mb-3 text-lg font-['Poppins']">Potensi Siswa</h4>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">
-                        Mengembangkan minat, bakat, serta potensi siswa di bidang akademik maupun non-akademik secara maksimal.
-                    </p>
-                </div>
-
-                {{-- Misi Item 4 --}}
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100/50 hover:shadow-xl hover:-translate-y-2 transition-all duration-300 text-center group cursor-default">
-                    <div class="w-12 h-12 mx-auto bg-[#F8F5F2] text-[#8B5E3C] rounded-full flex items-center justify-center text-xl font-black mb-5 group-hover:bg-[#8B5E3C] group-hover:text-white transition-colors">
-                        04
-                    </div>
-                    <h4 class="font-bold text-gray-800 mb-3 text-lg font-['Poppins']">Lingkungan</h4>
-                    <p class="text-gray-500 text-sm font-light leading-relaxed">
-                        Menciptakan lingkungan sekolah yang bersih, asri, sehat, dan kondusif untuk mendukung kegiatan belajar.
-                    </p>
-                </div>
-
-            </div>
->>>>>>> e2ce3a143a1afdbdd25c93013e88c09431be942f
         </div>
 
     </div>
