@@ -224,7 +224,7 @@
 
                         <a href="{{ route('berita.index') }}" class="nav-link">Berita</a>
 
-                        <a href="#" class="nav-link">Galeri</a>
+                        <a href="{{ route('galeri.index') }}" class="nav-link">Galeri</a>
 
                         <a href="#" class="nav-link">Kontak</a>
 

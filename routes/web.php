@@ -21,7 +21,9 @@ Route::get('/berita', function () {
     return view('pages.berita.index');
 })->name('berita.index');
 
-Route::view('/galeri', 'pages.galeri.index')->name('galeri');
+Route::get('/galeri', function () {
+    return view('pages.galeri.index');
+})->name('galeri.index');
 
 Route::view('/informasi', 'pages.informasi.index')->name('informasi');
 
