@@ -132,7 +132,6 @@
 </section>
 
 {{-- ===================== SAMBUTAN KEPALA SEKOLAH ===================== --}}
-{{-- Ditambahkan pb-40 agar area bawah lebih luas dan tidak tertabrak gelombang --}}
 <section class="pt-24 pb-40 bg-white relative overflow-hidden">
     
     {{-- Dekorasi Background Abstrak --}}
@@ -144,8 +143,6 @@
             
             {{-- ================= KOLOM GAMBAR (KIRI) ================= --}}
             <div class="lg:col-span-5 flex justify-center lg:justify-end pr-0 lg:pr-8 mt-8 lg:mt-0 px-4 sm:px-10 lg:px-0">
-                
-                {{-- Pembungkus (Wrapper) untuk mengecilkan ukuran area foto --}}
                 <div class="relative group w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]">
                     
                     {{-- Frame Offset (Bingkai Bergeser) --}}
@@ -195,7 +192,7 @@
                     </p>
                 </div>
 
-                {{-- Action Area (Tombol & Tanda Tangan) --}}
+                {{-- Action Area --}}
                 <div class="flex flex-wrap items-center gap-8">
                     <a href="#" class="group relative inline-flex items-center gap-3 px-8 py-4 bg-[#8B5E3C] text-white rounded-xl font-semibold overflow-hidden transition-all duration-300 hover:bg-[#724D31] hover:shadow-[0_8px_25px_-5px_rgba(139,94,60,0.5)] hover:-translate-y-1">
                         <span>Baca Sambutan Lengkap</span>
@@ -209,120 +206,183 @@
     </div>
 
     {{-- ===================== ORNAMEN GELOMBANG BAWAH (WAVE DIVIDER) ===================== --}}
-    {{-- Gelombang ini akan menyatukan warna putih background sambutan ke warna #F8F5F2 di section bawahnya --}}
     <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0">
-        <svg class="relative block w-full h-[60px] md:h-[120px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V3.38C1132.19,31.61,1055.71,33.85,985.66,92.83Z" fill="#F8F5F2"></path>
+        <svg class="relative block w-full h-[60px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V3.38C1132.19,31.61,1055.71,33.85,985.66,92.83Z" fill="#F0E6D8"></path>
         </svg>
     </div>
 </section>
 
-{{-- ===================== VISI & MISI SECTION ===================== --}}
-<section class="py-20 bg-[#F8F5F2] relative overflow-hidden">
+{{-- ===================== VISI & MISI SEKOLAH (MODERN CARD STYLE) ===================== --}}
+<section class="py-16 md:py-20 bg-[#F0E6D8] relative">
     
-    {{-- Dekorasi Latar Belakang --}}
-    <div class="absolute top-20 left-10 w-64 h-64 bg-[#E8D8C4] rounded-full mix-blend-multiply filter blur-3xl opacity-40 animate-pulse"></div>
-    <div class="absolute bottom-10 right-10 w-64 h-64 bg-[#D9B99B] rounded-full mix-blend-multiply filter blur-3xl opacity-30"></div>
+    {{-- Aksen Latar Ringan --}}
+    <div class="absolute top-1/4 left-10 w-32 h-32 bg-[#E8D8C4]/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-10 w-40 h-40 bg-white/60 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         
-        {{-- Section Header --}}
-        <div class="text-center mb-16 opacity-0 animate-fade-in-up">
-            <span class="text-[#8B5E3C] font-bold tracking-wider uppercase text-sm mb-3 block">Tujuan Kami</span>
-            <h2 class="text-3xl md:text-5xl font-black text-gray-800 font-['Poppins']">
-                Visi & <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#8B5E3C] to-[#D9B99B]">Misi</span>
-            </h2>
-            <p class="mt-4 text-gray-500 max-w-2xl mx-auto">
-                Komitmen kami dalam memberikan pendidikan terbaik dan membentuk karakter generasi penerus bangsa yang berkualitas.
+        {{-- HEADER SECTION --}}
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-[#8B5E3C] font-bold tracking-widest uppercase text-xs mb-3 block">Arah & Tujuan Bersama</span>
+            <h2 class="text-4xl md:text-5xl font-black text-gray-800 font-['Poppins']">Visi & Misi Sekolah</h2>
+            <div class="w-20 h-1.5 bg-[#8B5E3C] mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        {{-- VISI CARD --}}
+        <div class="max-w-4xl mx-auto bg-white rounded-2xl p-6 md:p-10 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-white text-center mb-10 relative transform transition-all hover:-translate-y-1 hover:shadow-[0_15px_50px_rgb(0,0,0,0.06)] group">
+            
+            {{-- Floating Icon Visi --}}
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-[#8B5E3C] text-white rounded-2xl rotate-3 flex items-center justify-center text-xl shadow-lg group-hover:rotate-12 transition-transform duration-300">
+                <i class="fa-regular fa-lightbulb"></i>
+            </div>
+            
+            <h3 class="text-gray-400 uppercase tracking-widest text-xs font-bold mb-5 mt-3">Visi Utama</h3>
+            
+            <p class="text-xl md:text-2xl text-gray-700 font-light leading-snug font-['Poppins']">
+                "Terwujudnya Peserta Didik yang <span class="font-bold text-[#8B5E3C]">Beriman, Cerdas, Terampil, Berkarakter,</span> dan Berwawasan Lingkungan."
             </p>
         </div>
 
-        {{-- Grid Visi & Misi --}}
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        {{-- MISI CARD --}}
+        <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-white relative transform transition-all hover:-translate-y-1 hover:shadow-[0_15px_50px_rgb(0,0,0,0.06)] group">
             
-            {{-- ======== CARD VISI (Kiri) ======== --}}
-            <div class="bg-[#8B5E3C] rounded-3xl p-8 md:p-12 shadow-2xl shadow-[#8B5E3C]/30 relative overflow-hidden group transition-transform duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up delay-100">
-                
-                {{-- Efek Kaca/Glow di dalam card Visi --}}
-                <div class="absolute -top-20 -right-20 w-64 h-64 bg-white/10 rounded-full blur-3xl transition-transform duration-700 group-hover:scale-150"></div>
-                <div class="absolute -bottom-20 -left-20 w-48 h-48 bg-black/20 rounded-full blur-2xl"></div>
-
-                <div class="relative z-10 flex flex-col h-full justify-center">
-                    <div class="w-16 h-16 bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl flex items-center justify-center text-white text-3xl mb-8 shadow-lg">
-                        <i class="fa-solid fa-eye"></i>
-                    </div>
-                    <h3 class="text-3xl md:text-4xl font-bold text-white font-['Poppins'] mb-6">
-                        Visi Sekolah
-                    </h3>
-                    <div class="relative">
-                        <i class="fa-solid fa-quote-left absolute -top-4 -left-4 text-5xl text-white/10 -z-10"></i>
-                        <p class="text-white/90 text-xl md:text-2xl leading-relaxed font-light italic">
-                            "Terwujudnya peserta didik yang Beriman, Bertaqwa, Cerdas, Terampil, Berkarakter, dan Berwawasan Lingkungan."
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            {{-- ======== CARD MISI (Kanan) ======== --}}
-            <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl shadow-gray-200/50 border border-gray-100 group transition-transform duration-500 hover:-translate-y-2 opacity-0 animate-fade-in-up delay-200">
-                
-                <div class="flex items-center gap-5 mb-8">
-                    <div class="w-16 h-16 bg-[#F8F5F2] rounded-2xl flex items-center justify-center text-[#8B5E3C] text-3xl shrink-0 transition-transform duration-500 group-hover:rotate-12">
-                        <i class="fa-solid fa-bullseye"></i>
-                    </div>
-                    <h3 class="text-3xl font-bold text-gray-800 font-['Poppins']">Misi Sekolah</h3>
-                </div>
-
-                <ul class="space-y-6">
-                    <li class="flex items-start gap-4">
-                        <div class="w-7 h-7 rounded-full bg-[#D9B99B]/30 flex items-center justify-center text-[#8B5E3C] shrink-0 mt-1">
-                            <i class="fa-solid fa-check text-xs"></i>
-                        </div>
-                        <p class="text-gray-600 leading-relaxed">
-                            Menanamkan keimanan dan ketaqwaan melalui pengamalan ajaran agama.
-                        </p>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <div class="w-7 h-7 rounded-full bg-[#D9B99B]/30 flex items-center justify-center text-[#8B5E3C] shrink-0 mt-1">
-                            <i class="fa-solid fa-check text-xs"></i>
-                        </div>
-                        <p class="text-gray-600 leading-relaxed">
-                            Mengoptimalkan proses pembelajaran dan bimbingan secara efektif dan efisien.
-                        </p>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <div class="w-7 h-7 rounded-full bg-[#D9B99B]/30 flex items-center justify-center text-[#8B5E3C] shrink-0 mt-1">
-                            <i class="fa-solid fa-check text-xs"></i>
-                        </div>
-                        <p class="text-gray-600 leading-relaxed">
-                            Mengembangkan potensi peserta didik di bidang akademik maupun non-akademik melalui kegiatan ekstrakurikuler.
-                        </p>
-                    </li>
-                    <li class="flex items-start gap-4">
-                        <div class="w-7 h-7 rounded-full bg-[#D9B99B]/30 flex items-center justify-center text-[#8B5E3C] shrink-0 mt-1">
-                            <i class="fa-solid fa-check text-xs"></i>
-                        </div>
-                        <p class="text-gray-600 leading-relaxed">
-                            Menumbuhkan budaya disiplin, bersih, dan peduli terhadap kelestarian lingkungan sekolah.
-                        </p>
-                    </li>
-                </ul>
-                
+            {{-- Floating Icon Misi (Target/Bullseye) --}}
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-[#8B5E3C] text-white rounded-2xl -rotate-3 flex items-center justify-center text-xl shadow-lg group-hover:-rotate-12 transition-transform duration-300">
+                <i class="fa-solid fa-bullseye"></i>
             </div>
             
+            <h3 class="text-center text-gray-400 uppercase tracking-widest text-sm font-bold mb-4 mt-2">Misi Kami</h3>
+            
+            {{-- List Misi Modern --}}
+            <ul class="space-y-2 text-gray-700 font-light text-sm md:text-base font-['Poppins']">
+                <li class="flex items-start gap-3 group/item">
+                    <span class="text-[#D9B99B] group-hover/item:text-[#8B5E3C] transition-colors mt-0.5 text-lg">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </span>
+                    <span class="leading-relaxed">Menanamkan keyakinan dan ketaqwaan melalui pengamalan ajaran agama secara nyata dalam kehidupan sehari-hari.</span>
+                </li>
+                <li class="flex items-start gap-3 group/item">
+                    <span class="text-[#D9B99B] group-hover/item:text-[#8B5E3C] transition-colors mt-0.5 text-lg">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </span>
+                    <span class="leading-relaxed">Mengoptimalkan proses pembelajaran secara aktif, kreatif, efektif, dan menyenangkan (PAKEM).</span>
+                </li>
+                <li class="flex items-start gap-3 group/item">
+                    <span class="text-[#D9B99B] group-hover/item:text-[#8B5E3C] transition-colors mt-0.5 text-lg">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </span>
+                    <span class="leading-relaxed">Mengembangkan minat, bakat, serta potensi siswa di bidang akademik maupun non-akademik secara maksimal.</span>
+                </li>
+                <li class="flex items-start gap-3 group/item">
+                    <span class="text-[#D9B99B] group-hover/item:text-[#8B5E3C] transition-colors mt-0.5 text-lg">
+                        <i class="fa-solid fa-circle-check"></i>
+                    </span>
+                    <span class="leading-relaxed">Menciptakan lingkungan sekolah yang bersih, asri, sehat, dan kondusif untuk mendukung kegiatan belajar.</span>
+                </li>
+            </ul>
         </div>
     </div>
 </section>
 
-{{-- ===================== BERITA / ARTIKEL TERBARU ===================== --}}
-<section class="py-24 bg-white relative">
-    {{-- Ini siap untuk kamu isi dengan grid card berita/artikel, sob! --}}
-    <div class="max-w-7xl mx-auto px-6 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold font-['Poppins'] mb-4 text-gray-800">Berita & Pengumuman</h2>
-        <p class="text-gray-500 mb-12">Dapatkan informasi terbaru seputar kegiatan SD Negeri 3 Mandiraja Kulon.</p>
-        <!-- Konten Berita Nanti di Sini -->
+{{-- 4. Panggil Section Berita di sini --}}
+    @include('pages.berita.berita')
+
+{{-- ===================== GALERI SEKOLAH ===================== --}}
+<section class="py-24 bg-[#F8F5F2] relative overflow-hidden">
+    
+    {{-- Aksen Latar Ringan --}}
+    <div class="absolute bottom-10 left-10 w-72 h-72 bg-[#E8D8C4]/40 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        
+        {{-- HEADER SECTION --}}
+        <div class="text-center max-w-2xl mx-auto mb-16">
+            <span class="text-[#8B5E3C] font-bold tracking-widest uppercase text-xs mb-3 block">Dokumentasi Kegiatan</span>
+            <h2 class="text-4xl md:text-5xl font-black text-gray-800 font-['Poppins']">Galeri Sekolah</h2>
+            <div class="w-20 h-1.5 bg-[#8B5E3C] mx-auto mt-6 rounded-full"></div>
+        </div>
+
+        {{-- GRID GALERI --}}
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            {{-- Item Galeri 1 --}}
+            <div class="relative group overflow-hidden rounded-3xl shadow-md aspect-[4/3] bg-white border border-gray-100 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=800" 
+                     alt="Kegiatan Belajar Mengajar" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-[#D9B99B] uppercase tracking-wider mb-1">Pembelajaran</span>
+                    <h3 class="text-white font-bold text-lg font-['Poppins']">Kegiatan Belajar di Kelas</h3>
+                </div>
+            </div>
+
+            {{-- Item Galeri 2 --}}
+            <div class="relative group overflow-hidden rounded-3xl shadow-md aspect-[4/3] bg-white border border-gray-100 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800" 
+                     alt="Pentas Seni" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-[#D9B99B] uppercase tracking-wider mb-1">Seni & Kreativitas</span>
+                    <h3 class="text-white font-bold text-lg font-['Poppins']">Pentas Seni Siswa</h3>
+                </div>
+            </div>
+
+            {{-- Item Galeri 3 --}}
+            <div class="relative group overflow-hidden rounded-3xl shadow-md aspect-[4/3] bg-white border border-gray-100 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800" 
+                     alt="Ekstrakurikuler" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-[#D9B99B] uppercase tracking-wider mb-1">Ekstrakurikuler</span>
+                    <h3 class="text-white font-bold text-lg font-['Poppins']">Kegiatan Pramuka & Olahraga</h3>
+                </div>
+            </div>
+
+            {{-- Item Galeri 4 --}}
+            <div class="relative group overflow-hidden rounded-3xl shadow-md aspect-[4/3] bg-white border border-gray-100 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800" 
+                     alt="Perpustakaan" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-[#D9B99B] uppercase tracking-wider mb-1">Fasilitas</span>
+                    <h3 class="text-white font-bold text-lg font-['Poppins']">Perpustakaan Sekolah</h3>
+                </div>
+            </div>
+
+            {{-- Item Galeri 5 --}}
+            <div class="relative group overflow-hidden rounded-3xl shadow-md aspect-[4/3] bg-white border border-gray-100 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=800" 
+                     alt="Upacara Bendera" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-[#D9B99B] uppercase tracking-wider mb-1">Nasionalisme</span>
+                    <h3 class="text-white font-bold text-lg font-['Poppins']">Upacara Bendera Hari Senin</h3>
+                </div>
+            </div>
+
+            {{-- Item Galeri 6 --}}
+            <div class="relative group overflow-hidden rounded-3xl shadow-md aspect-[4/3] bg-white border border-gray-100 cursor-pointer">
+                <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&q=80&w=800" 
+                     alt="Laboratorium Komputer" 
+                     class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                <div class="absolute inset-0 bg-gradient-to-t from-gray-950/80 via-gray-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-[#D9B99B] uppercase tracking-wider mb-1">Teknologi</span>
+                    <h3 class="text-white font-bold text-lg font-['Poppins']">Praktik Lab Komputer</h3>
+                </div>
+            </div>
+
+        </div>
+
+        {{-- Tombol Lihat Semua Galeri --}}
+        <div class="mt-12 text-center">
+            <a href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-[#8B5E3C] text-[#8B5E3C] rounded-xl font-semibold hover:bg-[#8B5E3C] hover:text-white transition-all shadow-sm hover:shadow-lg transform hover:-translate-y-1">
+                <span>Lihat Semua Foto</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+
     </div>
 </section>
-
 
 @endsection

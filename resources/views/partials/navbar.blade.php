@@ -64,7 +64,204 @@
                 </a>
 
                 {{-- ===================== DESKTOP ===================== --}}
-                @include('partials.nav-desktop')
+                <!-- Inline dari nav-desktop.blade.php -->
+                <div
+                    class="hidden lg:flex items-center gap-10"
+                    :class="scrolled ? 'text-gray-700' : 'text-white'">
+
+                    {{-- ================= MENU ================= --}}
+                    <div class="flex items-center gap-8 font-medium text-[15px]">
+
+                        {{-- Home --}}
+                        <a href="{{ route('home') }}"
+                            class="nav-link">
+
+                            Home
+
+                        </a>
+
+                        {{-- ================= PROFIL ================= --}}
+                        <div
+                            class="relative"
+                            x-data="{open:false}"
+                            @mouseenter="open=true"
+                            @mouseleave="open=false">
+
+                            <button class="nav-link flex items-center gap-2">
+
+                                Profil
+
+                                <i class="fa-solid fa-chevron-down text-[10px] transition"
+                                    :class="open && 'rotate-180'"></i>
+
+                            </button>
+
+                            <div
+                                x-show="open"
+                                x-transition.opacity.scale.origin.top
+                                class="dropdown-menu">
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-school"></i>
+                                    Profil Sekolah
+                                </a>
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-landmark"></i>
+                                    Sejarah
+                                </a>
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-bullseye"></i>
+                                    Visi & Misi
+                                </a>
+
+                                <a href="{{ route('profile.struktur') }}" class="dropdown-item">
+                                    <i class="fa-solid fa-sitemap"></i>
+                                    Struktur Organisasi
+                                </a>
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-building"></i>
+                                    Sarana & Prasarana
+                                </a>
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-person-running"></i>
+                                    Ekstrakurikuler
+                                </a>
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-trophy"></i>
+                                    Prestasi Sekolah
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        {{-- ================= WARGA ================= --}}
+
+                        <div
+                            class="relative"
+                            x-data="{open:false}"
+                            @mouseenter="open=true"
+                            @mouseleave="open=false">
+
+                            <button class="nav-link flex items-center gap-2">
+
+                                Warga
+
+                                <i class="fa-solid fa-chevron-down text-[10px]"
+                                    :class="open && 'rotate-180'"></i>
+
+                            </button>
+
+                            <div
+                                x-show="open"
+                                x-transition.opacity.scale.origin.top
+                                class="dropdown-menu w-60">
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-chalkboard-user"></i>
+                                    Guru
+                                </a>
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-user-graduate"></i>
+                                    Siswa
+                                </a>
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-users"></i>
+                                    Alumni
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        {{-- ================= AKADEMIK ================= --}}
+
+                        <div
+                            class="relative"
+                            x-data="{open:false}"
+                            @mouseenter="open=true"
+                            @mouseleave="open=false">
+
+                            <button class="nav-link flex items-center gap-2">
+
+                                Akademik
+
+                                <i class="fa-solid fa-chevron-down text-[10px]"
+                                    :class="open && 'rotate-180'"></i>
+
+                            </button>
+
+                            <div
+                                x-show="open"
+                                x-transition.opacity.scale.origin.top
+                                class="dropdown-menu">
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-calendar"></i>
+                                    Kalender Akademik
+                                </a>
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-lightbulb"></i>
+                                    Program Unggulan
+                                </a>
+
+                                <a href="#" class="dropdown-item">
+                                    <i class="fa-solid fa-medal"></i>
+                                    Prestasi Akademik
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                        <a href="{{ route('berita.index') }}" class="nav-link">Berita</a>
+
+                        <a href="#" class="nav-link">Galeri</a>
+
+                        <a href="#" class="nav-link">Kontak</a>
+
+                    </div>
+
+                    {{-- ================= ACTION ================= --}}
+
+                    <div class="flex items-center gap-3">
+
+                        <button
+                            class="action-btn">
+
+                            <i class="fa-solid fa-magnifying-glass"></i>
+
+                        </button>
+
+                        <button
+                            class="action-btn">
+
+                            <i class="fa-solid fa-moon"></i>
+
+                        </button>
+
+                        <a
+                            href="#"
+                            class="bg-[#8B5E3C] hover:bg-[#6F4A2D]
+                            text-white px-6 py-2.5 rounded-full
+                            font-semibold shadow-lg
+                            hover:scale-105 transition">
+
+                            Portal Admin
+
+                        </a>
+
+                    </div>
+
+                </div>
 
                 {{-- ===================== MOBILE BUTTON ===================== --}}
                 <button
@@ -86,11 +283,178 @@
     </div>
 
     {{-- ===================== MOBILE MENU ===================== --}}
+    <!-- Inline dari nav-mobile.blade.php -->
+    <div
+        x-show="mobileMenu"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 -translate-y-4"
+        x-transition:enter-end="opacity-100 translate-y-0"
+        x-transition:leave="transition ease-in duration-200"
+        x-transition:leave-start="opacity-100 translate-y-0"
+        x-transition:leave-end="opacity-0 -translate-y-4"
+        class="lg:hidden bg-white border-t shadow-xl">
 
-    @include('partials.nav-mobile')
+        <div class="px-6 py-6 space-y-2">
+
+            <a href="{{ route('home') }}"
+                class="block py-3 font-medium hover:text-[#8B5E3C]">
+                Home
+            </a>
+
+            {{-- Profil --}}
+            <div x-data="{ open:false }">
+
+                <button
+                    @click="open=!open"
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#8B5E3C]">
+
+                    Profil
+
+                    <i class="fa-solid fa-chevron-down"
+                        :class="{ 'rotate-180': open }"></i>
+
+                </button>
+
+                <div
+                    x-show="open"
+                    x-transition
+                    class="pl-4 pb-3 space-y-2 text-gray-600">
+
+                    <a href="#" class="block">Profil Sekolah</a>
+                    <a href="#" class="block">Sejarah</a>
+                    <a href="#" class="block">Visi & Misi</a>
+                    <a href="{{ route('profile.struktur') }}" class="block">Struktur Organisasi</a>
+                    <a href="#" class="block">Sarana Prasarana</a>
+                    <a href="#" class="block">Ekstrakurikuler</a>
+                    <a href="#" class="block">Prestasi</a>
+
+                </div>
+
+            </div>
+
+            {{-- Warga --}}
+            <div x-data="{ open:false }">
+
+                <button
+                    @click="open=!open"
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#8B5E3C]">
+
+                    Warga Sekolah
+
+                    <i class="fa-solid fa-chevron-down"
+                        :class="{ 'rotate-180': open }"></i>
+
+                </button>
+
+                <div
+                    x-show="open"
+                    x-transition
+                    class="pl-4 pb-3 space-y-2 text-gray-600">
+
+                    <a href="#" class="block">Guru</a>
+                    <a href="#" class="block">Siswa</a>
+                    <a href="#" class="block">Alumni</a>
+
+                </div>
+
+            </div>
+
+            {{-- Akademik --}}
+            <div x-data="{ open:false }">
+
+                <button
+                    @click="open=!open"
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#8B5E3C]">
+
+                    Akademik
+
+                    <i class="fa-solid fa-chevron-down"
+                        :class="{ 'rotate-180': open }"></i>
+
+                </button>
+
+                <div
+                    x-show="open"
+                    x-transition
+                    class="pl-4 pb-3 space-y-2 text-gray-600">
+
+                    <a href="#" class="block">Kalender Akademik</a>
+                    <a href="#" class="block">Program Unggulan</a>
+                    <a href="#" class="block">Prestasi Akademik</a>
+
+                </div>
+
+            </div>
+
+            <a href="#" class="block py-3 font-medium">Berita</a>
+
+            <a href="#" class="block py-3 font-medium">Galeri</a>
+
+            {{-- Informasi --}}
+            <div x-data="{ open:false }">
+
+                <button
+                    @click="open=!open"
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#8B5E3C]">
+
+                    Informasi
+
+                    <i class="fa-solid fa-chevron-down"
+                        :class="{ 'rotate-180': open }"></i>
+
+                </button>
+
+                <div
+                    x-show="open"
+                    x-transition
+                    class="pl-4 pb-3 space-y-2 text-gray-600">
+
+                    <a href="#" class="block">Pengumuman</a>
+                    <a href="#" class="block">Download</a>
+                    <a href="#" class="block">Pengaduan</a>
+
+                </div>
+
+            </div>
+
+            <a href="#" class="block py-3 font-medium">PPDB</a>
+
+            <a href="#" class="block py-3 font-medium">Kontak</a>
+
+            <hr class="my-4">
+
+            <div class="flex gap-3">
+
+                <button
+                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-[#8B5E3C] hover:text-white transition">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                </button>
+
+                <button
+                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-[#8B5E3C] hover:text-white transition">
+
+                    <i class="fa-solid fa-moon"></i>
+
+                </button>
+
+                <a href="#"
+                    class="flex-1 bg-[#8B5E3C] text-center text-white rounded-xl py-3 font-semibold hover:bg-[#6F4A2D] transition">
+
+                    Login Admin
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </nav>
 
+<!-- Script untuk mengubah posisi top saat scroll -->
 <script>
 document.addEventListener("alpine:init", () => {
 
