@@ -379,7 +379,7 @@
                     class="pl-4 pb-3 space-y-2 text-gray-600">
 
                     <a href="#" class="block">Kalender Akademik</a>
-                    <a href="#" class="block">Program Unggulan</a>
+                    <a href="{{ route('akademik.program-unggulan') }}" class="block">Program Unggulan</a>
                     <a href="#" class="block">Prestasi Akademik</a>
 
                 </div>

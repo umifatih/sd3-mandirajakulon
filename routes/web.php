@@ -10,6 +10,13 @@ Route::view('/profil/struktur', 'pages.profile.struktur')->name('profile.struktu
 Route::view('/warga-sekolah', 'pages.warga.index')->name('warga');
 
 Route::view('/akademik', 'pages.akademik.index')->name('akademik');
+Route::get('/akademik/program-unggulan', function () {
+    return view('pages.akademik.program-unggulan');
+})->name('akademik.program-unggulan');
+
+Route::get('/akademik/prestasi-akademik', function () {
+    return view('pages.akademik.prestasi-akademik');
+})->name('akademik.prestasi-akademik');
 
 Route::view('/berita', 'pages.berita.index')->name('berita');
 
@@ -42,3 +49,4 @@ Route::get('/profil/ekstrakurikuler', function () {
 Route::get('/profil/prestasi', function () {
     return view('pages.profile.prestasi');
 })->name('profile.prestasi');
+
