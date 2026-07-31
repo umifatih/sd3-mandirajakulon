@@ -203,10 +203,10 @@
                                 x-transition.opacity.scale.origin.top
                                 class="dropdown-menu">
 
-                                <a href="#" class="dropdown-item">
-                                    <i class="fa-solid fa-calendar"></i>
-                                    Kalender Akademik
-                                </a>
+                                <a href="{{ route('akademik.kalender') }}" class="dropdown-item">
+    <i class="fa-solid fa-calendar"></i>
+    Kalender Akademik
+</a>
 
                                 <a href="#" class="dropdown-item">
                                     <i class="fa-solid fa-lightbulb"></i>
@@ -378,7 +378,7 @@
                     x-transition
                     class="pl-4 pb-3 space-y-2 text-gray-600">
 
-                    <a href="#" class="block">Kalender Akademik</a>
+                    <a href="{{ route('akademik.kalender') }}" class="block">Kalender Akademik</a>
                     <a href="{{ route('akademik.program-unggulan') }}" class="block">Program Unggulan</a>
                     <a href="#" class="block">Prestasi Akademik</a>
 
