@@ -28,10 +28,10 @@
 
                     <div class="relative">
 
-                        <img
-                            src="https://placehold.co/60x60?text=Logo"
-                            alt="Logo Sekolah"
-                            class="w-14 h-14 rounded-full object-cover ring-4 ring-white shadow-lg transition duration-300 group-hover:scale-105">
+                        <img 
+    src="{{ asset('logo_SD3.png') }}" 
+    alt="Logo SD Negeri 3 Mandiraja Kulon" 
+    class="w-20 h-20 rounded-full object-cover shadow-lg transition duration-300 group-hover:scale-105">
 
                     </div>
 
