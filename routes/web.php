@@ -34,3 +34,11 @@ Route::view('/kontak', 'pages.kontak.index')->name('kontak');
 Route::get('/profil/sarana-prasarana', function () {
     return view('pages.profile.sarana-prasarana');
 })->name('profile.sarana');
+
+Route::get('/profil/ekstrakurikuler', function () {
+    return view('pages.profile.ekstrakurikuler');
+})->name('profile.ekstrakurikuler');
+
+Route::get('/profil/prestasi', function () {
+    return view('pages.profile.prestasi');
+})->name('profile.prestasi');

@@ -126,12 +126,12 @@
                                     Sarana & Prasarana
                                 </a>
 
-                                <a href="#" class="dropdown-item">
+                                <a href="{{ route('profile.ekstrakurikuler') }}" class="dropdown-item">
                                     <i class="fa-solid fa-person-running"></i>
                                     Ekstrakurikuler
                                 </a>
 
-                                <a href="#" class="dropdown-item">
+                                <a href="{{ route('profile.prestasi') }}" class="dropdown-item">
                                     <i class="fa-solid fa-trophy"></i>
                                     Prestasi Sekolah
                                 </a>
@@ -325,8 +325,8 @@
                     <a href="#" class="block">Visi & Misi</a>
                     <a href="{{ route('profile.struktur') }}" class="block">Struktur Organisasi</a>
                     <a href="{{ route('profile.sarana') }}" class="block">Sarana Prasarana</a>
-                    <a href="#" class="block">Ekstrakurikuler</a>
-                    <a href="#" class="block">Prestasi</a>
+                    <a href="{{ route('profile.ekstrakurikuler') }}" class="block">Ekstrakurikuler</a>
+                    <a href="{{ route('profile.prestasi') }}" class="block">Prestasi</a>
 
                 </div>
 
