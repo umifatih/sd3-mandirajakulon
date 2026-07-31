@@ -31,15 +31,15 @@
 >
 
     {{-- ===================== HERO / PAGE HEADER ===================== --}}
-    <section class="relative pt-44 pb-28 flex items-center justify-center overflow-hidden bg-[#2A211A]">
+    <section class="relative pt-44 pb-28 flex items-center justify-center overflow-hidden bg-[#051A24]">
 
-        <div class="absolute inset-0 bg-gradient-to-b from-[#8b5e3c]/70 via-[#8b5e3c]/60 to-[#F8F5F2]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#18587A]/70 via-[#18587A]/60 to-[#EBF5FA]"></div>
 
         <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
             <h1 class="text-5xl md:text-6xl font-black text-white leading-tight font-['Poppins'] drop-shadow-lg opacity-0 animate-fade-in-up delay-200">
                 Momen & Cerita <br class="hidden md:block">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D9B99B] to-[#E8D8C4]">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#85C2DB] to-[#3E9FC6]">
                     di SD Negeri 3 Mandiraja Kulon
                 </span>
             </h1>
@@ -63,7 +63,7 @@
                         type="text"
                         x-model="search"
                         placeholder="Cari momen, misal: pramuka, kelas, juara..."
-                        class="w-full pl-11 pr-4 py-3 rounded-xl bg-[#F8F5F2] border border-transparent focus:border-[#D9B99B] focus:bg-white outline-none text-sm text-gray-700 transition">
+                        class="w-full pl-11 pr-4 py-3 rounded-xl bg-[#EBF5FA] border border-transparent focus:border-[#85C2DB] focus:bg-white outline-none text-sm text-gray-700 transition">
                 </div>
 
                 {{-- Category Pills --}}
@@ -72,8 +72,8 @@
                         <button
                             @click="activeCategory = cat.key"
                             :class="activeCategory === cat.key
-                                ? 'bg-[#8B5E3C] text-white shadow-md'
-                                : 'bg-[#F8F5F2] text-gray-600 hover:bg-[#E8D8C4]'"
+                                ? 'bg-[#18587A] text-white shadow-md'
+                                : 'bg-[#EBF5FA] text-gray-600 hover:bg-[#CCE5F0]'"
                             class="px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all whitespace-nowrap">
                             <i :class="cat.icon" class="mr-1.5"></i>
                             <span x-text="cat.label"></span>
@@ -87,9 +87,9 @@
     </section>
 
     {{-- ===================== GALLERY GRID ===================== --}}
-    <section class="py-20 bg-[#F8F5F2] relative overflow-hidden">
+    <section class="py-20 bg-[#EBF5FA] relative overflow-hidden">
 
-        <div class="absolute top-40 right-10 w-72 h-72 bg-[#E8D8C4]/40 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-[#85C2DB]/40 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
 
@@ -98,7 +98,7 @@
                 x-show="filteredItems.length === 0"
                 x-cloak
                 class="text-center py-24">
-                <div class="w-20 h-20 mx-auto rounded-2xl bg-[#F0E6D8] flex items-center justify-center text-3xl text-[#8B5E3C] mb-4">
+                <div class="w-20 h-20 mx-auto rounded-2xl bg-[#CCE5F0] flex items-center justify-center text-3xl text-[#18587A] mb-4">
                     <i class="fa-regular fa-images"></i>
                 </div>
                 <h3 class="text-xl font-bold text-gray-700 font-['Poppins']">Belum ada foto ditemukan</h3>
@@ -120,11 +120,11 @@
                              class="w-full h-auto object-cover group-hover:scale-110 transition-transform duration-700">
 
                         <div class="absolute inset-0 bg-gradient-to-t from-gray-950/85 via-gray-950/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-5">
-                            <span class="text-[11px] font-semibold text-[#D9B99B] uppercase tracking-wider mb-1" x-text="item.categoryLabel"></span>
+                            <span class="text-[11px] font-semibold text-[#85C2DB] uppercase tracking-wider mb-1" x-text="item.categoryLabel"></span>
                             <h3 class="text-white font-bold text-base font-['Poppins'] leading-snug" x-text="item.title"></h3>
                         </div>
 
-                        <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center text-[#8B5E3C] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 shadow-md">
+                        <div class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/90 backdrop-blur flex items-center justify-center text-[#18587A] opacity-0 group-hover:opacity-100 scale-90 group-hover:scale-100 transition-all duration-300 shadow-md">
                             <i class="fa-solid fa-expand text-sm"></i>
                         </div>
                     </div>
@@ -136,7 +136,7 @@
             <div class="mt-14 text-center" x-show="visibleCount < filteredItems.length" x-cloak>
                 <button
                     @click="visibleCount += 6"
-                    class="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-[#8B5E3C] text-[#8B5E3C] rounded-xl font-semibold hover:bg-[#8B5E3C] hover:text-white transition-all shadow-sm hover:shadow-lg transform hover:-translate-y-1">
+                    class="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-[#18587A] text-[#18587A] rounded-xl font-semibold hover:bg-[#18587A] hover:text-white transition-all shadow-sm hover:shadow-lg transform hover:-translate-y-1">
                     <span>Muat Lebih Banyak</span>
                     <i class="fa-solid fa-arrow-down"></i>
                 </button>
@@ -180,7 +180,7 @@
 
                 <div class="p-6 flex items-start justify-between gap-4">
                     <div>
-                        <span class="text-xs font-semibold text-[#8B5E3C] uppercase tracking-wider" x-text="activeItem?.categoryLabel"></span>
+                        <span class="text-xs font-semibold text-[#18587A] uppercase tracking-wider" x-text="activeItem?.categoryLabel"></span>
                         <h3 class="text-xl font-bold text-gray-800 font-['Poppins'] mt-1" x-text="activeItem?.title"></h3>
                         <p class="text-sm text-gray-500 mt-1" x-text="activeItem?.desc"></p>
                     </div>
@@ -191,7 +191,7 @@
             {{-- Close Button --}}
             <button
                 @click="closeLightbox()"
-                class="absolute -top-4 -right-4 w-11 h-11 rounded-full bg-white text-gray-700 shadow-lg flex items-center justify-center hover:bg-[#8B5E3C] hover:text-white transition">
+                class="absolute -top-4 -right-4 w-11 h-11 rounded-full bg-white text-gray-700 shadow-lg flex items-center justify-center hover:bg-[#18587A] hover:text-white transition">
                 <i class="fa-solid fa-xmark"></i>
             </button>
 

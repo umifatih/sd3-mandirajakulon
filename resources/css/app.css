@@ -4,42 +4,32 @@
 @import "./components.css";
 
 body{
-
     font-family:'Inter',sans-serif;
-
     background:var(--background);
-
     color:var(--text);
-
 }
 
 @keyframes runningText {
-
     from {
         transform: translateX(100%);
     }
-
     to {
         transform: translateX(-100%);
     }
-
 }
 
 .animate-running {
-
     display: inline-block;
-
     animation: runningText 25s linear infinite;
-
 }
 
 .nav-link{
-    @apply relative py-2 transition duration-300 hover:text-[#8B5E3C];
+    @apply relative py-2 transition duration-300 hover:text-[#18587A];
 }
 
 .nav-link::after{
     content:"";
-    @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-[#8B5E3C] transition-all duration-300;
+    @apply absolute left-0 -bottom-1 h-0.5 w-0 bg-[#18587A] transition-all duration-300;
 }
 
 .nav-link:hover::after{
@@ -55,18 +45,18 @@ body{
 .dropdown-item{
     @apply flex items-center gap-3 rounded-xl
     px-4 py-3 text-gray-700 transition-all
-    hover:bg-[#F8F5F2] hover:translate-x-1;
+    hover:bg-[#EBF5FA] hover:translate-x-1;
 }
 
 .dropdown-item i{
-    @apply text-[#8B5E3C] w-5;
+    @apply text-[#18587A] w-5;
 }
 
 .action-btn{
     @apply w-11 h-11 rounded-full
-    bg-[#F8F5F2]
+    bg-[#EBF5FA]
     text-gray-600
-    hover:bg-[#8B5E3C]
+    hover:bg-[#18587A]
     hover:text-white
     transition-all duration-300
     hover:scale-105;

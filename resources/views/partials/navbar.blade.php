@@ -53,7 +53,7 @@
 
                         </p>
 
-                        <span class="text-xs font-medium text-blue-300">
+                        <span class="text-xs font-medium text-[#85C2DB]">
 
                             Website Resmi
 
@@ -250,7 +250,7 @@
 
                         <a
                             href="#"
-                            class="bg-blue-600 hover:bg-blue-700
+                            class="bg-[#18587A] hover:bg-[#134A64]
                             text-white px-6 py-2.5 rounded-full
                             font-semibold shadow-lg
                             hover:scale-105 transition">
@@ -269,7 +269,7 @@
                     class="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl transition"
 
                     :class="scrolled
-                        ? 'bg-blue-50 text-blue-600'
+                        ? 'bg-[#EBF5FA] text-[#18587A]'
                         : 'bg-white/20 text-white backdrop-blur'">
 
                     <i class="fa-solid fa-bars text-xl"></i>
@@ -297,7 +297,7 @@
         <div class="px-6 py-6 space-y-2">
 
             <a href="{{ route('home') }}"
-                class="block py-3 font-medium hover:text-blue-600">
+                class="block py-3 font-medium hover:text-[#18587A]">
                 Home
             </a>
 
@@ -306,7 +306,7 @@
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-blue-600">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#18587A]">
 
                     Profil
 
@@ -337,7 +337,7 @@
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-blue-600">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#18587A]">
 
                     Warga Sekolah
 
@@ -364,7 +364,7 @@
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-blue-600">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#18587A]">
 
                     Akademik
 
@@ -386,16 +386,16 @@
 
             </div>
 
-            <a href="#" class="block py-3 font-medium">Berita</a>
+            <a href="#" class="block py-3 font-medium hover:text-[#18587A]">Berita</a>
 
-            <a href="#" class="block py-3 font-medium">Galeri</a>
+            <a href="#" class="block py-3 font-medium hover:text-[#18587A]">Galeri</a>
 
             {{-- Informasi --}}
             <div x-data="{ open:false }">
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-blue-600">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-[#18587A]">
 
                     Informasi
 
@@ -417,30 +417,30 @@
 
             </div>
 
-            <a href="#" class="block py-3 font-medium">PPDB</a>
+            <a href="#" class="block py-3 font-medium hover:text-[#18587A]">PPDB</a>
 
-            <a href="#" class="block py-3 font-medium">Kontak</a>
+            <a href="#" class="block py-3 font-medium hover:text-[#18587A]">Kontak</a>
 
             <hr class="my-4">
 
             <div class="flex gap-3">
 
                 <button
-                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-blue-600 hover:text-white transition">
+                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-[#18587A] hover:text-white transition">
 
                     <i class="fa-solid fa-magnifying-glass"></i>
 
                 </button>
 
                 <button
-                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-blue-600 hover:text-white transition">
+                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-[#18587A] hover:text-white transition">
 
                     <i class="fa-solid fa-moon"></i>
 
                 </button>
 
                 <a href="#"
-                    class="flex-1 bg-blue-600 text-center text-white rounded-xl py-3 font-semibold hover:bg-blue-700 transition">
+                    class="flex-1 bg-[#18587A] text-center text-white rounded-xl py-3 font-semibold hover:bg-[#134A64] transition">
 
                     Login Admin
 

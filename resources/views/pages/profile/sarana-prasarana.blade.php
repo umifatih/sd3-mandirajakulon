@@ -23,15 +23,15 @@
     x-init="init()">
 
     {{-- ===================== HERO ===================== --}}
-    <section class="relative pt-44 pb-28 flex items-center justify-center overflow-hidden bg-[#2A211A]">
+    <section class="relative pt-44 pb-28 flex items-center justify-center overflow-hidden bg-[#051A24]">
 
-        <div class="absolute inset-0 bg-gradient-to-b from-[#8b5e3c]/70 via-[#8b5e3c]/60 to-[#F8F5F2]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#18587A]/70 via-[#18587A]/60 to-[#EBF5FA]"></div>
 
         <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
             <h1 class="text-5xl md:text-6xl font-black text-white leading-tight font-['Poppins'] drop-shadow-lg opacity-0 animate-fade-in-up delay-200">
                 Sarana & Prasarana <br class="hidden md:block">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D9B99B] to-[#E8D8C4]">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#85C2DB] to-[#3E9FC6]">
                     SD Negeri 3 Mandiraja Kulon
                 </span>
             </h1>
@@ -49,7 +49,7 @@
 
                 <template x-for="stat in stats" :key="stat.label">
                     <div class="bg-white rounded-2xl p-5 md:p-6 shadow-[0_10px_40px_rgb(0,0,0,0.08)] border border-gray-100 text-center hover:-translate-y-1.5 transition-transform duration-300">
-                        <div class="w-11 h-11 mx-auto mb-3 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center text-lg">
+                        <div class="w-11 h-11 mx-auto mb-3 rounded-xl bg-[#EBF5FA] text-[#18587A] flex items-center justify-center text-lg">
                             <i :class="stat.icon"></i>
                         </div>
                         <h3 class="text-2xl md:text-3xl font-black text-gray-800 font-['Poppins']" x-text="stat.display + stat.suffix"></h3>
@@ -64,15 +64,15 @@
     {{-- ===================== FILTER + GRID FASILITAS ===================== --}}
     <section class="pt-4 pb-24 bg-white relative overflow-hidden">
 
-        <div class="absolute top-40 right-0 w-72 h-72 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70 pointer-events-none"></div>
+        <div class="absolute top-40 right-0 w-72 h-72 bg-[#EBF5FA] rounded-full mix-blend-multiply filter blur-3xl opacity-70 pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10">
 
             {{-- HEADER --}}
             <div class="text-center max-w-2xl mx-auto mb-10">
-                <span class="text-blue-600 font-bold tracking-widest uppercase text-xs mb-3 block">Fasilitas Sekolah</span>
+                <span class="text-[#18587A] font-bold tracking-widest uppercase text-xs mb-3 block">Fasilitas Sekolah</span>
                 <h2 class="text-3xl md:text-4xl font-black text-gray-800 font-['Poppins']">Jelajahi Ruang & Fasilitas Kami</h2>
-                <div class="w-20 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full"></div>
+                <div class="w-20 h-1.5 bg-[#18587A] mx-auto mt-6 rounded-full"></div>
             </div>
 
             {{-- FILTER TABS --}}
@@ -82,8 +82,8 @@
                         @click="activeCategory = cat.key"
                         class="px-5 py-2.5 rounded-full text-sm font-semibold border transition-all duration-300"
                         :class="activeCategory === cat.key
-                            ? 'bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-600/30 scale-105'
-                            : 'bg-white text-gray-600 border-gray-200 hover:border-blue-300 hover:text-blue-600'">
+                            ? 'bg-[#18587A] text-white border-[#18587A] shadow-lg shadow-[#18587A]/30 scale-105'
+                            : 'bg-white text-gray-600 border-gray-200 hover:border-[#85C2DB] hover:text-[#18587A]'">
                         <i :class="cat.icon" class="mr-2"></i>
                         <span x-text="cat.label"></span>
                     </button>
@@ -101,9 +101,9 @@
                         <div class="relative h-48 overflow-hidden">
                             <img :src="item.image" :alt="item.name"
                                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                            <div class="absolute inset-0 bg-gradient-to-t from-blue-950/70 via-transparent to-transparent"></div>
+                            <div class="absolute inset-0 bg-gradient-to-t from-gray-950/70 via-transparent to-transparent"></div>
 
-                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur text-blue-600 text-xs font-bold">
+                            <span class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur text-[#18587A] text-xs font-bold">
                                 <i :class="item.icon" class="mr-1"></i>
                                 <span x-text="item.categoryLabel"></span>
                             </span>
@@ -122,7 +122,7 @@
                                     <i class="fa-solid fa-layer-group mr-1"></i>
                                     <span x-text="item.qty"></span>
                                 </span>
-                                <span class="text-blue-600 text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
+                                <span class="text-[#18587A] text-sm font-semibold flex items-center gap-1 group-hover:gap-2 transition-all">
                                     Detail <i class="fa-solid fa-arrow-right text-xs"></i>
                                 </span>
                             </div>
@@ -158,7 +158,7 @@
             x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0"
             @click="selected = null"
-            class="absolute inset-0 bg-blue-950/70 backdrop-blur-sm"></div>
+            class="absolute inset-0 bg-gray-950/70 backdrop-blur-sm"></div>
 
         {{-- Card --}}
         <div
@@ -177,7 +177,7 @@
                 <div>
                     <div class="relative h-56 md:h-64">
                         <img :src="selected.image" :alt="selected.name" class="w-full h-full object-cover rounded-t-3xl">
-                        <div class="absolute inset-0 bg-gradient-to-t from-blue-950/70 to-transparent rounded-t-3xl"></div>
+                        <div class="absolute inset-0 bg-gradient-to-t from-gray-950/70 to-transparent rounded-t-3xl"></div>
 
                         <button
                             @click="selected = null"
@@ -186,7 +186,7 @@
                         </button>
 
                         <div class="absolute bottom-5 left-6 right-6">
-                            <span class="inline-block px-3 py-1 rounded-full bg-blue-600 text-white text-xs font-bold mb-2">
+                            <span class="inline-block px-3 py-1 rounded-full bg-[#18587A] text-white text-xs font-bold mb-2">
                                 <i :class="selected.icon" class="mr-1"></i>
                                 <span x-text="selected.categoryLabel"></span>
                             </span>
@@ -199,11 +199,11 @@
                         <p class="text-gray-600 leading-relaxed font-light mb-6" x-text="selected.description"></p>
 
                         <div class="grid grid-cols-2 gap-4 mb-6">
-                            <div class="bg-blue-50 rounded-2xl p-4">
+                            <div class="bg-[#EBF5FA] rounded-2xl p-4">
                                 <p class="text-xs text-gray-500 mb-1">Jumlah</p>
                                 <p class="font-bold text-gray-800" x-text="selected.qty"></p>
                             </div>
-                            <div class="bg-blue-50 rounded-2xl p-4">
+                            <div class="bg-[#EBF5FA] rounded-2xl p-4">
                                 <p class="text-xs text-gray-500 mb-1">Kondisi</p>
                                 <p class="font-bold" :class="selected.condition === 'Baik' ? 'text-green-600' : 'text-amber-600'" x-text="selected.condition"></p>
                             </div>
@@ -213,7 +213,7 @@
                         <ul class="space-y-2">
                             <template x-for="feature in selected.features" :key="feature">
                                 <li class="flex items-start gap-3 text-gray-600 text-sm">
-                                    <i class="fa-solid fa-circle-check text-blue-500 mt-0.5"></i>
+                                    <i class="fa-solid fa-circle-check text-[#18587A] mt-0.5"></i>
                                     <span x-text="feature"></span>
                                 </li>
                             </template>

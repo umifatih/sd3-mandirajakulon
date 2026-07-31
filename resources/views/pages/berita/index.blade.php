@@ -21,8 +21,8 @@
     /* Scrollbar tipis khusus panel Trending */
     .trending-scroll::-webkit-scrollbar { width: 5px; }
     .trending-scroll::-webkit-scrollbar-track { background: transparent; }
-    .trending-scroll::-webkit-scrollbar-thumb { background: #E8D8C4; border-radius: 10px; }
-    .trending-scroll::-webkit-scrollbar-thumb:hover { background: #D9B99B; }
+    .trending-scroll::-webkit-scrollbar-thumb { background: #85C2DB; border-radius: 10px; }
+    .trending-scroll::-webkit-scrollbar-thumb:hover { background: #18587A; }
 </style>
 
 <div
@@ -31,15 +31,15 @@
 >
 
     {{-- ===================== HERO / PAGE HEADER (GRADASI, NO PHOTO) ===================== --}}
-    <section class="relative pt-44 pb-28 flex items-center justify-center overflow-hidden bg-[#2A211A]">
+    <section class="relative pt-44 pb-28 flex items-center justify-center overflow-hidden bg-[#051A24]">
 
-        <div class="absolute inset-0 bg-gradient-to-b from-[#8b5e3c]/70 via-[#8b5e3c]/60 to-[#F8F5F2]"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-[#18587A]/70 via-[#18587A]/60 to-[#EBF5FA]"></div>
 
         <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
 
             <h1 class="text-5xl md:text-6xl font-black text-white leading-tight font-['Poppins'] drop-shadow-lg opacity-0 animate-fade-in-up delay-200">
                 Berita & Informasi <br class="hidden md:block">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#D9B99B] to-[#E8D8C4]">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#85C2DB] to-[#3E9FC6]">
                     SD Negeri 3 Mandiraja Kulon
                 </span>
             </h1>
@@ -63,7 +63,7 @@
                         type="text"
                         x-model="search"
                         placeholder="Cari berita, misal: OSN, PPDB, prestasi..."
-                        class="w-full pl-11 pr-4 py-3 rounded-xl bg-[#F8F5F2] border border-transparent focus:border-[#D9B99B] focus:bg-white outline-none text-sm text-gray-700 transition">
+                        class="w-full pl-11 pr-4 py-3 rounded-xl bg-[#EBF5FA] border border-transparent focus:border-[#85C2DB] focus:bg-white outline-none text-sm text-gray-700 transition">
                 </div>
 
                 {{-- Category Pills --}}
@@ -72,8 +72,8 @@
                         <button
                             @click="activeCategory = cat.key"
                             :class="activeCategory === cat.key
-                                ? 'bg-[#8B5E3C] text-white shadow-md'
-                                : 'bg-[#F8F5F2] text-gray-600 hover:bg-[#E8D8C4]'"
+                                ? 'bg-[#18587A] text-white shadow-md'
+                                : 'bg-[#EBF5FA] text-gray-600 hover:bg-[#CCE5F0]'"
                             class="px-4 py-2 rounded-xl text-xs md:text-sm font-semibold transition-all whitespace-nowrap">
                             <i :class="cat.icon" class="mr-1.5"></i>
                             <span x-text="cat.label"></span>
@@ -88,7 +88,7 @@
 
     {{-- ===================== BERITA UTAMA (CAROUSEL) + TRENDING ===================== --}}
     <section
-        class="pt-16 pb-4 bg-[#F8F5F2]"
+        class="pt-16 pb-4 bg-[#EBF5FA]"
         x-show="!search && activeCategory === 'semua'"
         x-cloak>
         <div class="max-w-6xl mx-auto px-6">
@@ -98,7 +98,7 @@
                 {{-- ================= KIRI: BERITA UTAMA (CAROUSEL) ================= --}}
                 <div class="lg:col-span-8">
 
-                    <span class="text-[#8B5E3C] font-bold tracking-widest uppercase text-xs mb-4 block">Berita Utama</span>
+                    <span class="text-[#18587A] font-bold tracking-widest uppercase text-xs mb-4 block">Berita Utama</span>
 
                     {{-- Carousel Slide Utama --}}
                     <div
@@ -118,7 +118,7 @@
                                     <div class="absolute inset-0 bg-gradient-to-t from-gray-950/90 via-gray-950/30 to-transparent"></div>
 
                                     <div class="absolute inset-x-0 bottom-0 p-6 md:p-9">
-                                        <span class="inline-block px-3.5 py-1.5 rounded-full bg-[#8B5E3C] text-white text-xs font-semibold uppercase tracking-wide shadow-lg mb-3" x-text="slide.categoryLabel"></span>
+                                        <span class="inline-block px-3.5 py-1.5 rounded-full bg-[#18587A] text-white text-xs font-semibold uppercase tracking-wide shadow-lg mb-3" x-text="slide.categoryLabel"></span>
                                         <h2 class="text-xl md:text-3xl font-black text-white font-['Poppins'] leading-tight max-w-2xl mb-3" x-text="slide.title"></h2>
                                         <div class="flex items-center gap-2 text-xs md:text-sm text-white/75 font-medium">
                                             <i class="fa-regular fa-clock"></i>
@@ -129,7 +129,7 @@
                             </template>
                         </div>
 
-                        {{-- Arrow Kanan (seperti kumparan) --}}
+                        {{-- Arrow Kanan --}}
                         <button
                             @click.prevent="nextHero()"
                             class="absolute top-1/2 right-4 -translate-y-1/2 w-10 h-10 rounded-full bg-white/90 backdrop-blur text-gray-700 flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all hover:bg-white">
@@ -176,10 +176,10 @@
                         {{-- Header Trending --}}
                         <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100 shrink-0">
                             <h3 class="flex items-center gap-2 text-lg font-black text-gray-800 font-['Poppins']">
-                                <span class="w-1.5 h-5 bg-[#8B5E3C] rounded-full"></span>
+                                <span class="w-1.5 h-5 bg-[#18587A] rounded-full"></span>
                                 Trending
                             </h3>
-                            <button @click="activeCategory = 'semua'; search = ''" class="text-xs font-semibold text-[#8B5E3C] hover:underline flex items-center gap-1">
+                            <button @click="activeCategory = 'semua'; search = ''" class="text-xs font-semibold text-[#18587A] hover:underline flex items-center gap-1">
                                 Lihat lainnya
                                 <i class="fa-solid fa-arrow-right text-[10px]"></i>
                             </button>
@@ -191,9 +191,9 @@
                                 <a :href="item.url" class="flex items-start gap-3 py-3.5 border-b border-gray-50 last:border-0 group">
                                     <img :src="item.img" :alt="item.title" class="w-16 h-16 rounded-xl object-cover shrink-0">
                                     <div class="min-w-0">
-                                        <h4 class="text-sm font-bold text-gray-800 leading-snug line-clamp-2 group-hover:text-[#8B5E3C] transition-colors" x-text="item.title"></h4>
+                                        <h4 class="text-sm font-bold text-gray-800 leading-snug line-clamp-2 group-hover:text-[#18587A] transition-colors" x-text="item.title"></h4>
                                         <div class="flex items-center gap-1.5 mt-1.5">
-                                            <span class="text-[11px] text-[#8B5E3C] font-semibold" x-text="item.categoryLabel"></span>
+                                            <span class="text-[11px] text-[#18587A] font-semibold" x-text="item.categoryLabel"></span>
                                             <span class="w-1 h-1 rounded-full bg-gray-300"></span>
                                             <span class="text-[11px] text-gray-400" x-text="item.timeAgo"></span>
                                         </div>
@@ -212,9 +212,9 @@
     </section>
 
     {{-- ===================== SEMUA BERITA + SIDEBAR KATEGORI ===================== --}}
-    <section class="py-16 bg-[#F8F5F2] relative overflow-hidden">
+    <section class="py-16 bg-[#EBF5FA] relative overflow-hidden">
 
-        <div class="absolute top-40 right-10 w-72 h-72 bg-[#E8D8C4]/40 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-40 right-10 w-72 h-72 bg-[#85C2DB]/40 rounded-full blur-3xl pointer-events-none"></div>
 
         <div class="max-w-6xl mx-auto px-6 relative z-10">
 
@@ -223,7 +223,7 @@
 
                     <div class="flex items-center justify-between mb-8">
                         <div>
-                            <span class="text-[#8B5E3C] font-bold tracking-widest uppercase text-xs mb-2 block">Semua Kabar</span>
+                            <span class="text-[#18587A] font-bold tracking-widest uppercase text-xs mb-2 block">Semua Kabar</span>
                             <h2 class="text-2xl md:text-3xl font-black text-gray-800 font-['Poppins']">Semua Berita</h2>
                         </div>
                         <span class="hidden md:block text-sm text-gray-400 font-medium" x-text="filteredItems.length + ' berita ditemukan'"></span>
@@ -234,7 +234,7 @@
                         x-show="filteredItems.length === 0"
                         x-cloak
                         class="text-center py-24">
-                        <div class="w-20 h-20 mx-auto rounded-2xl bg-[#F0E6D8] flex items-center justify-center text-3xl text-[#8B5E3C] mb-4">
+                        <div class="w-20 h-20 mx-auto rounded-2xl bg-[#CCE5F0] flex items-center justify-center text-3xl text-[#18587A] mb-4">
                             <i class="fa-regular fa-newspaper"></i>
                         </div>
                         <h3 class="text-xl font-bold text-gray-700 font-['Poppins']">Belum ada berita ditemukan</h3>
@@ -255,7 +255,7 @@
                                 <div class="relative h-44 overflow-hidden">
                                     <img :src="item.img" :alt="item.title" loading="lazy"
                                          class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                                    <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur text-[#8B5E3C] text-[11px] font-semibold uppercase tracking-wide shadow-sm" x-text="item.categoryLabel"></div>
+                                    <div class="absolute top-4 left-4 px-3 py-1 rounded-full bg-white/90 backdrop-blur text-[#18587A] text-[11px] font-semibold uppercase tracking-wide shadow-sm" x-text="item.categoryLabel"></div>
                                 </div>
 
                                 <div class="p-5 flex flex-col flex-1">
@@ -265,11 +265,11 @@
                                         <span x-text="item.readTime + ' baca'"></span>
                                     </div>
 
-                                    <h3 class="font-bold text-gray-800 font-['Poppins'] leading-snug mb-2 line-clamp-2 group-hover:text-[#8B5E3C] transition-colors" x-text="item.title"></h3>
+                                    <h3 class="font-bold text-gray-800 font-['Poppins'] leading-snug mb-2 line-clamp-2 group-hover:text-[#18587A] transition-colors" x-text="item.title"></h3>
 
                                     <p class="text-sm text-gray-500 leading-relaxed line-clamp-2 mb-4" x-text="item.excerpt"></p>
 
-                                    <span class="mt-auto inline-flex items-center gap-2 text-[#8B5E3C] font-semibold text-sm">
+                                    <span class="mt-auto inline-flex items-center gap-2 text-[#18587A] font-semibold text-sm">
                                         Baca Selengkapnya
                                         <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1.5 transition-transform"></i>
                                     </span>
@@ -283,7 +283,7 @@
                     <div class="mt-12 text-center" x-show="visibleCount < filteredItems.length" x-cloak>
                         <button
                             @click="visibleCount += 9"
-                            class="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-[#8B5E3C] text-[#8B5E3C] rounded-xl font-semibold hover:bg-[#8B5E3C] hover:text-white transition-all shadow-sm hover:shadow-lg transform hover:-translate-y-1">
+                            class="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-[#18587A] text-[#18587A] rounded-xl font-semibold hover:bg-[#18587A] hover:text-white transition-all shadow-sm hover:shadow-lg transform hover:-translate-y-1">
                             <span>Muat Lebih Banyak</span>
                             <i class="fa-solid fa-arrow-down"></i>
                         </button>
