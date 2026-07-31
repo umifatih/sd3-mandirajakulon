@@ -30,3 +30,7 @@ Route::view('/informasi', 'pages.informasi.index')->name('informasi');
 Route::view('/ppdb', 'pages.ppdb.index')->name('ppdb');
 
 Route::view('/kontak', 'pages.kontak.index')->name('kontak');
+
+Route::get('/profil/sarana-prasarana', function () {
+    return view('pages.profile.sarana-prasarana');
+})->name('profile.sarana');

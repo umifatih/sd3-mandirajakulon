@@ -25,21 +25,21 @@
     <img src="https://www.tangselpos.id/storage/2024/11/sd-negeri-atau-swasta-harusnya-semua-gratis-12112024-095250.jpg" 
          class="absolute inset-0 w-full h-full object-cover scale-105 transition-transform duration-[10000ms] hover:scale-110" alt="Banner Sekolah">
     
-    {{-- Overlay Gradient Modern dengan sentuhan merah --}}
-    <div class="absolute inset-0 bg-gradient-to-b from-red-900/60 via-red-900/50 to-red-950/90"></div>
+    {{-- Overlay Gradient Modern dengan sentuhan biru --}}
+    <div class="absolute inset-0 bg-gradient-to-b from-blue-900/60 via-blue-900/50 to-blue-950/90"></div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 text-center mt-16">
         
         {{-- Badge Pengumuman UI/UX Modern (Animasi ke-1) --}}
         <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white mb-8 opacity-0 animate-fade-in-up delay-100">
-            <span class="flex h-2.5 w-2.5 rounded-full bg-yellow-400 animate-pulse"></span>
+            <span class="flex h-2.5 w-2.5 rounded-full bg-green-400 animate-pulse"></span>
             <span class="text-sm font-medium tracking-wide">Penerimaan Peserta Didik Baru 2026 Telah Dibuka</span>
         </div>
 
         {{-- Main Heading dengan Kombinasi Warna (Animasi ke-2) --}}
         <h1 class="text-5xl md:text-7xl font-black text-white leading-tight font-['Poppins'] drop-shadow-lg opacity-0 animate-fade-in-up delay-200">
             Mencetak Generasi <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-300 to-red-500">
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-blue-500">
                 Berprestasi & Berkarakter
             </span>
         </h1>
@@ -51,7 +51,7 @@
 
         {{-- Call to Action Buttons (Animasi ke-4) --}}
         <div class="mt-10 flex flex-wrap justify-center gap-5 opacity-0 animate-fade-in-up delay-400">
-            <a href="#" class="group relative px-8 py-4 bg-red-600 text-white rounded-xl font-semibold overflow-hidden transition-all hover:bg-red-700 hover:shadow-[0_0_20px_rgba(220,38,38,0.5)] transform hover:-translate-y-1">
+            <a href="#" class="group relative px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold overflow-hidden transition-all hover:bg-blue-700 hover:shadow-[0_0_20px_rgba(37,99,235,0.5)] transform hover:-translate-y-1">
                 <span class="relative z-10 flex items-center gap-2">
                     Jelajahi Profil <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
                 </span>
@@ -64,7 +64,7 @@
 </section>
 
 {{-- ===================== RUNNING TEXT (NEWS TICKER) ===================== --}}
-<section class="bg-red-700 text-white relative overflow-hidden flex items-center border-y-4 border-red-900">
+<section class="bg-blue-700 text-white relative overflow-hidden flex items-center border-y-4 border-blue-900">
     <div class="flex items-center w-full max-w-7xl mx-auto">
         
         {{-- Area Marquee (Berjalan) --}}
@@ -98,7 +98,7 @@
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {{-- Card 1: Akreditasi --}}
         <div class="bg-white rounded-2xl p-6 shadow-md shadow-gray-200/50 border border-gray-100 flex items-start gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl cursor-pointer group">
-            <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
                 <i class="fa-solid fa-graduation-cap"></i>
             </div>
             <div>
@@ -109,7 +109,7 @@
 
         {{-- Card 2: Fasilitas --}}
         <div class="bg-white rounded-2xl p-6 shadow-md shadow-gray-200/50 border border-gray-100 flex items-start gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl cursor-pointer group">
-            <div class="w-12 h-12 bg-yellow-50 text-yellow-600 rounded-xl flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 bg-green-50 text-green-600 rounded-xl flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
                 <i class="fa-solid fa-book-open"></i>
             </div>
             <div>
@@ -120,7 +120,7 @@
 
         {{-- Card 3: Guru --}}
         <div class="bg-white rounded-2xl p-6 shadow-md shadow-gray-200/50 border border-gray-100 flex items-start gap-4 transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl cursor-pointer group">
-            <div class="w-12 h-12 bg-red-50 text-red-600 rounded-xl flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
+            <div class="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center text-xl shrink-0 group-hover:scale-110 transition-transform">
                 <i class="fa-solid fa-chalkboard-user"></i>
             </div>
             <div>
@@ -134,9 +134,9 @@
 {{-- ===================== SAMBUTAN KEPALA SEKOLAH ===================== --}}
 <section class="pt-24 pb-40 bg-white relative overflow-hidden">
     
-    {{-- Dekorasi Background Abstrak dengan sentuhan merah dan kuning --}}
-    <div class="absolute top-0 left-0 w-72 h-72 bg-red-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
-    <div class="absolute bottom-0 right-0 w-72 h-72 bg-yellow-50 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
+    {{-- Dekorasi Background Abstrak dengan sentuhan biru --}}
+    <div class="absolute top-0 left-0 w-72 h-72 bg-blue-50 rounded-full mix-blend-multiply filter blur-3xl opacity-70"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-50"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-12 items-center">
@@ -146,7 +146,7 @@
                 <div class="relative group w-full max-w-[280px] sm:max-w-[320px] lg:max-w-[360px]">
                     
                     {{-- Frame Offset (Bingkai Bergeser) --}}
-                    <div class="absolute inset-0 border-4 border-red-300 rounded-3xl translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6 z-0"></div>
+                    <div class="absolute inset-0 border-4 border-blue-300 rounded-3xl translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6 z-0"></div>
                     
                     {{-- Foto Utama --}}
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSksJZvxPUhKV-MQAoMziyxjOJ8SqNtdDnMmdj09uO5E1k2bSMaB_JSTc0&s=10" 
@@ -156,12 +156,12 @@
                     {{-- Floating Badge Nama --}}
                     <div class="absolute -bottom-6 -right-2 sm:-right-6 z-20 bg-white/90 backdrop-blur-lg p-3 sm:p-4 rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.15)] border border-white transition-transform duration-500 group-hover:-translate-y-2 group-hover:scale-105">
                         <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center text-white shrink-0 shadow-inner">
+                            <div class="w-10 h-10 bg-blue-600 rounded-full flex items-center justify-center text-white shrink-0 shadow-inner">
                                 <i class="fa-solid fa-user-tie text-sm"></i>
                             </div>
                             <div>
                                 <h4 class="font-bold text-gray-800 text-sm font-['Poppins']">Bpk. H. Ahmad</h4>
-                                <p class="text-xs text-red-600 font-medium">Kepala Sekolah</p>
+                                <p class="text-xs text-blue-600 font-medium">Kepala Sekolah</p>
                             </div>
                         </div>
                     </div>
@@ -175,14 +175,14 @@
                 {{-- Judul Sambutan --}}
                 <h2 class="text-4xl md:text-5xl font-black text-gray-800 leading-tight font-['Poppins'] mb-6">
                     Selamat Datang di <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-600 to-red-400">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-blue-400">
                         SD Negeri 3 Mandiraja Kulon
                     </span>
                 </h2>
 
                 {{-- Paragraf dengan Ikon Kutip besar --}}
                 <div class="relative z-10">
-                    <i class="fa-solid fa-quote-left absolute -top-6 -left-6 text-7xl text-red-50 -z-10"></i>
+                    <i class="fa-solid fa-quote-left absolute -top-6 -left-6 text-7xl text-blue-50 -z-10"></i>
                     
                     <p class="text-gray-600 leading-relaxed text-lg mb-5 text-justify font-light">
                         Puji syukur kita panjatkan kehadirat Tuhan Yang Maha Esa. Di era digital yang terus berkembang pesat ini, kami menyadari pentingnya pemanfaatan teknologi informasi dalam dunia pendidikan. 
@@ -194,7 +194,7 @@
 
                 {{-- Action Area --}}
                 <div class="flex flex-wrap items-center gap-8">
-                    <a href="#" class="group relative inline-flex items-center gap-3 px-8 py-4 bg-red-600 text-white rounded-xl font-semibold overflow-hidden transition-all duration-300 hover:bg-red-700 hover:shadow-[0_8px_25px_-5px_rgba(220,38,38,0.5)] hover:-translate-y-1">
+                    <a href="#" class="group relative inline-flex items-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold overflow-hidden transition-all duration-300 hover:bg-blue-700 hover:shadow-[0_8px_25px_-5px_rgba(37,99,235,0.5)] hover:-translate-y-1">
                         <span>Baca Sambutan Lengkap</span>
                         <i class="fa-solid fa-arrow-right group-hover:translate-x-1.5 transition-transform"></i>
                     </a>
@@ -208,39 +208,39 @@
     {{-- ===================== ORNAMEN GELOMBANG BAWAH (WAVE DIVIDER) ===================== --}}
     <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0">
         <svg class="relative block w-full h-[60px] md:h-[100px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V3.38C1132.19,31.61,1055.71,33.85,985.66,92.83Z" fill="#fef2f2"></path>
+            <path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V3.38C1132.19,31.61,1055.71,33.85,985.66,92.83Z" fill="#eff6ff"></path>
         </svg>
     </div>
 </section>
 
 {{-- ===================== VISI & MISI SEKOLAH (MODERN CARD STYLE) ===================== --}}
-<section class="py-16 md:py-20 bg-red-50 relative">
+<section class="py-16 md:py-20 bg-blue-50 relative">
     
     {{-- Aksen Latar Ringan --}}
-    <div class="absolute top-1/4 left-10 w-32 h-32 bg-red-200/40 rounded-full blur-3xl pointer-events-none"></div>
-    <div class="absolute bottom-1/4 right-10 w-40 h-40 bg-yellow-100/60 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/4 left-10 w-32 h-32 bg-blue-200/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-10 w-40 h-40 bg-white/60 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         
         {{-- HEADER SECTION --}}
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-red-600 font-bold tracking-widest uppercase text-xs mb-3 block">Arah & Tujuan Bersama</span>
+            <span class="text-blue-600 font-bold tracking-widest uppercase text-xs mb-3 block">Arah & Tujuan Bersama</span>
             <h2 class="text-4xl md:text-5xl font-black text-gray-800 font-['Poppins']">Visi & Misi Sekolah</h2>
-            <div class="w-20 h-1.5 bg-red-600 mx-auto mt-6 rounded-full"></div>
+            <div class="w-20 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full"></div>
         </div>
 
         {{-- VISI CARD --}}
         <div class="max-w-4xl mx-auto bg-white rounded-2xl p-6 md:p-10 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-white text-center mb-10 relative transform transition-all hover:-translate-y-1 hover:shadow-[0_15px_50px_rgb(0,0,0,0.06)] group">
             
             {{-- Floating Icon Visi --}}
-            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-red-600 text-white rounded-2xl rotate-3 flex items-center justify-center text-xl shadow-lg group-hover:rotate-12 transition-transform duration-300">
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-blue-600 text-white rounded-2xl rotate-3 flex items-center justify-center text-xl shadow-lg group-hover:rotate-12 transition-transform duration-300">
                 <i class="fa-regular fa-lightbulb"></i>
             </div>
             
             <h3 class="text-gray-400 uppercase tracking-widest text-xs font-bold mb-5 mt-3">Visi Utama</h3>
             
             <p class="text-xl md:text-2xl text-gray-700 font-light leading-snug font-['Poppins']">
-                "Terwujudnya Peserta Didik yang <span class="font-bold text-red-600">Beriman, Cerdas, Terampil, Berkarakter,</span> dan Berwawasan Lingkungan."
+                "Terwujudnya Peserta Didik yang <span class="font-bold text-blue-600">Beriman, Cerdas, Terampil, Berkarakter,</span> dan Berwawasan Lingkungan."
             </p>
         </div>
 
@@ -248,7 +248,7 @@
         <div class="max-w-4xl mx-auto bg-white rounded-3xl p-8 md:p-12 shadow-[0_10px_40px_rgb(0,0,0,0.03)] border border-white relative transform transition-all hover:-translate-y-1 hover:shadow-[0_15px_50px_rgb(0,0,0,0.06)] group">
             
             {{-- Floating Icon Misi (Target/Bullseye) --}}
-            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-red-600 text-white rounded-2xl -rotate-3 flex items-center justify-center text-xl shadow-lg group-hover:-rotate-12 transition-transform duration-300">
+            <div class="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-blue-600 text-white rounded-2xl -rotate-3 flex items-center justify-center text-xl shadow-lg group-hover:-rotate-12 transition-transform duration-300">
                 <i class="fa-solid fa-bullseye"></i>
             </div>
             
@@ -257,25 +257,25 @@
             {{-- List Misi Modern --}}
             <ul class="space-y-2 text-gray-700 font-light text-sm md:text-base font-['Poppins']">
                 <li class="flex items-start gap-3 group/item">
-                    <span class="text-yellow-400 group-hover/item:text-yellow-600 transition-colors mt-0.5 text-lg">
+                    <span class="text-blue-400 group-hover/item:text-blue-600 transition-colors mt-0.5 text-lg">
                         <i class="fa-solid fa-circle-check"></i>
                     </span>
                     <span class="leading-relaxed">Menanamkan keyakinan dan ketaqwaan melalui pengamalan ajaran agama secara nyata dalam kehidupan sehari-hari.</span>
                 </li>
                 <li class="flex items-start gap-3 group/item">
-                    <span class="text-yellow-400 group-hover/item:text-yellow-600 transition-colors mt-0.5 text-lg">
+                    <span class="text-blue-400 group-hover/item:text-blue-600 transition-colors mt-0.5 text-lg">
                         <i class="fa-solid fa-circle-check"></i>
                     </span>
                     <span class="leading-relaxed">Mengoptimalkan proses pembelajaran secara aktif, kreatif, efektif, dan menyenangkan (PAKEM).</span>
                 </li>
                 <li class="flex items-start gap-3 group/item">
-                    <span class="text-yellow-400 group-hover/item:text-yellow-600 transition-colors mt-0.5 text-lg">
+                    <span class="text-blue-400 group-hover/item:text-blue-600 transition-colors mt-0.5 text-lg">
                         <i class="fa-solid fa-circle-check"></i>
                     </span>
                     <span class="leading-relaxed">Mengembangkan minat, bakat, serta potensi siswa di bidang akademik maupun non-akademik secara maksimal.</span>
                 </li>
                 <li class="flex items-start gap-3 group/item">
-                    <span class="text-yellow-400 group-hover/item:text-yellow-600 transition-colors mt-0.5 text-lg">
+                    <span class="text-blue-400 group-hover/item:text-blue-600 transition-colors mt-0.5 text-lg">
                         <i class="fa-solid fa-circle-check"></i>
                     </span>
                     <span class="leading-relaxed">Menciptakan lingkungan sekolah yang bersih, asri, sehat, dan kondusif untuk mendukung kegiatan belajar.</span>
@@ -289,18 +289,18 @@
     @include('pages.berita.berita')
 
 {{-- ===================== GALERI SEKOLAH ===================== --}}
-<section class="py-24 bg-red-50 relative overflow-hidden">
+<section class="py-24 bg-blue-50 relative overflow-hidden">
     
     {{-- Aksen Latar Ringan --}}
-    <div class="absolute bottom-10 left-10 w-72 h-72 bg-red-200/40 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 left-10 w-72 h-72 bg-blue-200/40 rounded-full blur-3xl pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-6 relative z-10">
         
         {{-- HEADER SECTION --}}
         <div class="text-center max-w-2xl mx-auto mb-16">
-            <span class="text-red-600 font-bold tracking-widest uppercase text-xs mb-3 block">Dokumentasi Kegiatan</span>
+            <span class="text-blue-600 font-bold tracking-widest uppercase text-xs mb-3 block">Dokumentasi Kegiatan</span>
             <h2 class="text-4xl md:text-5xl font-black text-gray-800 font-['Poppins']">Galeri Sekolah</h2>
-            <div class="w-20 h-1.5 bg-red-600 mx-auto mt-6 rounded-full"></div>
+            <div class="w-20 h-1.5 bg-blue-600 mx-auto mt-6 rounded-full"></div>
         </div>
 
         {{-- GRID GALERI --}}
@@ -311,8 +311,8 @@
                 <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=800" 
                      alt="Kegiatan Belajar Mengajar" 
                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-red-950/80 via-red-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-xs font-semibold text-yellow-300 uppercase tracking-wider mb-1">Pembelajaran</span>
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">Pembelajaran</span>
                     <h3 class="text-white font-bold text-lg font-['Poppins']">Kegiatan Belajar di Kelas</h3>
                 </div>
             </div>
@@ -322,8 +322,8 @@
                 <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800" 
                      alt="Pentas Seni" 
                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-red-950/80 via-red-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-xs font-semibold text-yellow-300 uppercase tracking-wider mb-1">Seni & Kreativitas</span>
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">Seni & Kreativitas</span>
                     <h3 class="text-white font-bold text-lg font-['Poppins']">Pentas Seni Siswa</h3>
                 </div>
             </div>
@@ -333,8 +333,8 @@
                 <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800" 
                      alt="Ekstrakurikuler" 
                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-red-950/80 via-red-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-xs font-semibold text-yellow-300 uppercase tracking-wider mb-1">Ekstrakurikuler</span>
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">Ekstrakurikuler</span>
                     <h3 class="text-white font-bold text-lg font-['Poppins']">Kegiatan Pramuka & Olahraga</h3>
                 </div>
             </div>
@@ -344,8 +344,8 @@
                 <img src="https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800" 
                      alt="Perpustakaan" 
                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-red-950/80 via-red-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-xs font-semibold text-yellow-300 uppercase tracking-wider mb-1">Fasilitas</span>
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">Fasilitas</span>
                     <h3 class="text-white font-bold text-lg font-['Poppins']">Perpustakaan Sekolah</h3>
                 </div>
             </div>
@@ -355,8 +355,8 @@
                 <img src="https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=800" 
                      alt="Upacara Bendera" 
                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-red-950/80 via-red-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-xs font-semibold text-yellow-300 uppercase tracking-wider mb-1">Nasionalisme</span>
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">Nasionalisme</span>
                     <h3 class="text-white font-bold text-lg font-['Poppins']">Upacara Bendera Hari Senin</h3>
                 </div>
             </div>
@@ -366,8 +366,8 @@
                 <img src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&q=80&w=800" 
                      alt="Laboratorium Komputer" 
                      class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-                <div class="absolute inset-0 bg-gradient-to-t from-red-950/80 via-red-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                    <span class="text-xs font-semibold text-yellow-300 uppercase tracking-wider mb-1">Teknologi</span>
+                <div class="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-blue-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                    <span class="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">Teknologi</span>
                     <h3 class="text-white font-bold text-lg font-['Poppins']">Praktik Lab Komputer</h3>
                 </div>
             </div>
@@ -376,7 +376,7 @@
 
         {{-- Tombol Lihat Semua Galeri --}}
         <div class="mt-12 text-center">
-            <a href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-red-600 text-red-600 rounded-xl font-semibold hover:bg-red-600 hover:text-white transition-all shadow-sm hover:shadow-lg transform hover:-translate-y-1">
+            <a href="#" class="inline-flex items-center gap-2 px-8 py-4 bg-white border-2 border-blue-600 text-blue-600 rounded-xl font-semibold hover:bg-blue-600 hover:text-white transition-all shadow-sm hover:shadow-lg transform hover:-translate-y-1">
                 <span>Lihat Semua Foto</span>
                 <i class="fa-solid fa-arrow-right"></i>
             </a>

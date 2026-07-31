@@ -53,7 +53,7 @@
 
                         </p>
 
-                        <span class="text-xs font-medium text-yellow-300">
+                        <span class="text-xs font-medium text-blue-300">
 
                             Website Resmi
 
@@ -121,7 +121,7 @@
                                     Struktur Organisasi
                                 </a>
 
-                                <a href="#" class="dropdown-item">
+                                <a href="{{ route('profile.sarana') }}" class="dropdown-item">
                                     <i class="fa-solid fa-building"></i>
                                     Sarana & Prasarana
                                 </a>
@@ -250,7 +250,7 @@
 
                         <a
                             href="#"
-                            class="bg-red-600 hover:bg-red-700
+                            class="bg-blue-600 hover:bg-blue-700
                             text-white px-6 py-2.5 rounded-full
                             font-semibold shadow-lg
                             hover:scale-105 transition">
@@ -269,7 +269,7 @@
                     class="lg:hidden flex items-center justify-center w-11 h-11 rounded-xl transition"
 
                     :class="scrolled
-                        ? 'bg-red-50 text-red-600'
+                        ? 'bg-blue-50 text-blue-600'
                         : 'bg-white/20 text-white backdrop-blur'">
 
                     <i class="fa-solid fa-bars text-xl"></i>
@@ -297,7 +297,7 @@
         <div class="px-6 py-6 space-y-2">
 
             <a href="{{ route('home') }}"
-                class="block py-3 font-medium hover:text-red-600">
+                class="block py-3 font-medium hover:text-blue-600">
                 Home
             </a>
 
@@ -306,7 +306,7 @@
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-red-600">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-blue-600">
 
                     Profil
 
@@ -324,7 +324,7 @@
                     <a href="#" class="block">Sejarah</a>
                     <a href="#" class="block">Visi & Misi</a>
                     <a href="{{ route('profile.struktur') }}" class="block">Struktur Organisasi</a>
-                    <a href="#" class="block">Sarana Prasarana</a>
+                    <a href="{{ route('profile.sarana') }}" class="block">Sarana Prasarana</a>
                     <a href="#" class="block">Ekstrakurikuler</a>
                     <a href="#" class="block">Prestasi</a>
 
@@ -337,7 +337,7 @@
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-red-600">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-blue-600">
 
                     Warga Sekolah
 
@@ -364,7 +364,7 @@
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-red-600">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-blue-600">
 
                     Akademik
 
@@ -395,7 +395,7 @@
 
                 <button
                     @click="open=!open"
-                    class="w-full flex justify-between items-center py-3 font-medium hover:text-red-600">
+                    class="w-full flex justify-between items-center py-3 font-medium hover:text-blue-600">
 
                     Informasi
 
@@ -426,21 +426,21 @@
             <div class="flex gap-3">
 
                 <button
-                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-red-600 hover:text-white transition">
+                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-blue-600 hover:text-white transition">
 
                     <i class="fa-solid fa-magnifying-glass"></i>
 
                 </button>
 
                 <button
-                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-red-600 hover:text-white transition">
+                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-blue-600 hover:text-white transition">
 
                     <i class="fa-solid fa-moon"></i>
 
                 </button>
 
                 <a href="#"
-                    class="flex-1 bg-red-600 text-center text-white rounded-xl py-3 font-semibold hover:bg-red-700 transition">
+                    class="flex-1 bg-blue-600 text-center text-white rounded-xl py-3 font-semibold hover:bg-blue-700 transition">
 
                     Login Admin
 
