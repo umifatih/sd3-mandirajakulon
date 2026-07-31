@@ -77,64 +77,6 @@
         </template>
     </div>
 </section>
-
-<section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden" x-data="{ activeSlide: 0, slides: [
-    'https://www.tangselpos.id/storage/2024/11/sd-negeri-atau-swasta-harusnya-semua-gratis-12112024-095250.jpg',
-    'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=1920',
-    'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=1920'
-]}" x-init="setInterval(() => { activeSlide = (activeSlide + 1) % slides.length }, 5000)">
-    
-    {{-- Background Images dengan Efek Slider Otomatis & Zoom Halus --}}
-    <template x-for="(slide, index) in slides" :key="index">
-        <div class="absolute inset-0 transition-opacity duration-1000 ease-in-out" :class="activeSlide === index ? 'opacity-100 z-0' : 'opacity-0 -z-10'">
-            <img :src="slide" class="w-full h-full object-cover scale-105 transition-transform duration-[10000ms] hover:scale-110" alt="Banner Sekolah">
-        </div>
-    </template>
-    
-    {{-- Overlay Gradient Modern dengan sentuhan warna baru --}}
-    <div class="absolute inset-0 bg-gradient-to-b from-[#092B3A]/60 via-[#092B3A]/50 to-[#051A24]/90 z-10"></div>
-
-    <div class="relative z-20 max-w-7xl mx-auto px-6 text-center mt-16">
-        
-        {{-- Badge Pengumuman UI/UX Modern (Animasi ke-1) --}}
-        <div class="inline-flex items-center gap-3 px-5 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-white mb-8 opacity-0 animate-fade-in-up delay-100">
-            <span class="flex h-2.5 w-2.5 rounded-full bg-green-400 animate-pulse"></span>
-            <span class="text-sm font-medium tracking-wide">Penerimaan Peserta Didik Baru 2026 Telah Dibuka</span>
-        </div>
-
-        {{-- Main Heading dengan Kombinasi Warna (Animasi ke-2) --}}
-        <h1 class="text-5xl md:text-7xl font-black text-white leading-tight font-['Poppins'] drop-shadow-lg opacity-0 animate-fade-in-up delay-200">
-            Mencetak Generasi <br>
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#85C2DB] to-[#3E9FC6]">
-                Berprestasi & Berkarakter
-            </span>
-        </h1>
-
-        {{-- Deskripsi (Animasi ke-3) --}}
-        <p class="mt-6 text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed font-light opacity-0 animate-fade-in-up delay-300">
-            Selamat datang di website resmi SD Negeri 3 Mandiraja Kulon. Mewujudkan pendidikan berkualitas yang berlandaskan iman, takwa, dan inovasi masa depan.
-        </p>
-
-        {{-- Call to Action Buttons (Animasi ke-4) --}}
-        <div class="mt-10 flex flex-wrap justify-center gap-5 opacity-0 animate-fade-in-up delay-400">
-            <a href="#" class="group relative px-8 py-4 bg-[#18587A] text-white rounded-xl font-semibold overflow-hidden transition-all hover:bg-[#134A64] hover:shadow-[0_0_20px_rgba(24,88,122,0.5)] transform hover:-translate-y-1">
-                <span class="relative z-10 flex items-center gap-2">
-                    Jelajahi Profil <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
-                </span>
-            </a>
-            <a href="#" class="px-8 py-4 bg-white/10 text-white border border-white/30 backdrop-blur-md rounded-xl font-semibold hover:bg-white/20 transition-all transform hover:-translate-y-1">
-                Portal PPDB
-            </a>
-        </div>
-    </div>
-
-    {{-- Indikator Titik Slider (Opsional untuk pemanis navigasi bawah) --}}
-    <div class="absolute bottom-6 left-0 right-0 z-20 flex justify-center gap-2">
-        <template x-for="(slide, index) in slides" :key="index">
-            <button @click="activeSlide = index" class="w-3 h-3 rounded-full transition-all duration-300" :class="activeSlide === index ? 'bg-[#85C2DB] w-8' : 'bg-white/50'"></button>
-        </template>
-    </div>
-</section>
 {{-- ===================== RUNNING TEXT (NEWS TICKER) ===================== --}}
 <section class="bg-[#134A64] text-white relative overflow-hidden flex items-center border-y-4 border-[#092B3A]">
     <div class="flex items-center w-full max-w-7xl mx-auto">
