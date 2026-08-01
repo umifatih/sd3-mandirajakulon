@@ -98,6 +98,7 @@
 
                             <div
                                 x-show="open"
+                                x-cloak
                                 x-transition.opacity.scale.origin.top
                                 class="dropdown-menu">
 
@@ -159,6 +160,7 @@
 
                             <div
                                 x-show="open"
+                                x-cloak
                                 x-transition.opacity.scale.origin.top
                                 class="dropdown-menu w-60">
 
@@ -200,6 +202,7 @@
 
                             <div
                                 x-show="open"
+                                x-cloak
                                 x-transition.opacity.scale.origin.top
                                 class="dropdown-menu">
 

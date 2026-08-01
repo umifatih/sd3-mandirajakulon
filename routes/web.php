@@ -43,6 +43,11 @@ Route::view('/ppdb', 'pages.ppdb.index')->name('ppdb');
 
 Route::view('/kontak', 'pages.kontak.index')->name('kontak');
 
+Route::post('/kontak', function (\Illuminate\Http\Request $request) {
+    // proses simpan pesan, kirim email, dsb
+    return back()->with('success', 'Pesan terkirim!');
+})->name('kontak.store');
+
 Route::get('/profil/sarana-prasarana', function () {
     return view('pages.profile.sarana-prasarana');
 })->name('profile.sarana');
