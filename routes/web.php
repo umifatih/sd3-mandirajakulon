@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AuthController;
 
 Route::view('/', 'pages.home.index')->name('home');
 
@@ -55,3 +56,15 @@ Route::get('/profil/prestasi', function () {
     return view('pages.profile.prestasi');
 })->name('profile.prestasi');
 
+
+// ADMINISTRATOR ROUTES
+Route::get('/admin/sdn3-mandirajakulon', [AuthController::class, 'showLoginForm'])->name('admin.login');
+Route::post('/admin/sdn3-mandirajakulon', [AuthController::class, 'login'])->name('admin.login.submit');
+Route::post('/keluar/sdn3-mandirajakulon', [AuthController::class, 'logout'])->name('admin.logout');
+
+// Route Area Admin (Tetap dibungkus middleware auth)
+Route::middleware(['auth'])->prefix('admin')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('admin.dashboard');
+    })->name('admin.dashboard');
+});

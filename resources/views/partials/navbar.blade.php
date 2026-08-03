@@ -247,18 +247,6 @@
                             <i class="fa-solid fa-moon"></i>
 
                         </button>
-
-                        <a
-                            href="#"
-                            class="bg-[#18587A] hover:bg-[#134A64]
-                            text-white px-6 py-2.5 rounded-full
-                            font-semibold shadow-lg
-                            hover:scale-105 transition">
-
-                            Portal Admin
-
-                        </a>
-
                     </div>
 
                 </div>
@@ -438,14 +426,6 @@
                     <i class="fa-solid fa-moon"></i>
 
                 </button>
-
-                <a href="#"
-                    class="flex-1 bg-[#18587A] text-center text-white rounded-xl py-3 font-semibold hover:bg-[#134A64] transition">
-
-                    Login Admin
-
-                </a>
-
             </div>
 
         </div>
