@@ -63,13 +63,22 @@ Route::get('/profil/prestasi', function () {
 
 
 // ADMINISTRATOR ROUTES
-Route::get('/admin/sdn3-mandirajakulon', [AuthController::class, 'showLoginForm'])->name('admin.login');
-Route::post('/admin/sdn3-mandirajakulon', [AuthController::class, 'login'])->name('admin.login.submit');
-Route::post('/keluar/sdn3-mandirajakulon', [AuthController::class, 'logout'])->name('admin.logout');
+// 1. Tampilkan Halaman Login Rahasia
+Route::get('/admin/sdn3-mandirajakulon', function () {
+    return view('admin.login');
+})->name('admin.login');
 
-// Route Area Admin (Tetap dibungkus middleware auth)
-Route::middleware(['auth'])->prefix('admin')->group(function () {
-    Route::get('/dashboard', function () {
-        return view('admin.dashboard');
-    })->name('admin.dashboard');
-});
+// 2. Proses Login Dummy (Bebas isi email/password apa saja, langsung lolos)
+Route::post('/admin/sdn3-mandirajakulon', function () {
+    return redirect()->route('admin.dashboard');
+})->name('admin.login.submit');
+
+// 3. Tampilkan Dashboard Admin (Tanpa Cek Database)
+Route::get('/admin/dashboard', function () {
+    return view('admin.dashboard');
+})->name('admin.dashboard');
+
+// 4. Logout Dummy (Kembali ke Halaman Login)
+Route::post('/keluar/sdn3-mandirajakulon', function () {
+    return redirect()->route('admin.login');
+})->name('admin.logout');
