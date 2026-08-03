@@ -60,7 +60,6 @@
                         </span>
 
                     </div>
-
                 </a>
 
                 {{-- ===================== DESKTOP ===================== --}}
@@ -211,7 +210,7 @@
     Kalender Akademik
 </a>
 
-                                <a href="#" class="dropdown-item">
+                                <a href="{{ route('akademik.program-unggulan') }}" class="dropdown-item">
                                     <i class="fa-solid fa-lightbulb"></i>
                                     Program Unggulan
                                 </a>
@@ -244,24 +243,6 @@
 
                         </button>
 
-                        <button
-                            class="action-btn">
-
-                            <i class="fa-solid fa-moon"></i>
-
-                        </button>
-
-                        <a
-                            href="#"
-                            class="bg-[#18587A] hover:bg-[#134A64]
-                            text-white px-6 py-2.5 rounded-full
-                            font-semibold shadow-lg
-                            hover:scale-105 transition">
-
-                            Portal Admin
-
-                        </a>
-
                     </div>
 
                 </div>
@@ -289,6 +270,7 @@
     <!-- Inline dari nav-mobile.blade.php -->
     <div
         x-show="mobileMenu"
+        x-cloak
         x-transition:enter="transition ease-out duration-300"
         x-transition:enter-start="opacity-0 -translate-y-4"
         x-transition:enter-end="opacity-100 translate-y-0"
@@ -320,6 +302,7 @@
 
                 <div
                     x-show="open"
+                    x-cloak
                     x-transition
                     class="pl-4 pb-3 space-y-2 text-gray-600">
 
@@ -351,6 +334,7 @@
 
                 <div
                     x-show="open"
+                    x-cloak
                     x-transition
                     class="pl-4 pb-3 space-y-2 text-gray-600">
 
@@ -378,6 +362,7 @@
 
                 <div
                     x-show="open"
+                    x-cloak
                     x-transition
                     class="pl-4 pb-3 space-y-2 text-gray-600">
 
@@ -389,9 +374,9 @@
 
             </div>
 
-            <a href="#" class="block py-3 font-medium hover:text-[#18587A]">Berita</a>
+            <a href="{{ route('berita.index') }}" class="block py-3 font-medium hover:text-[#18587A]">Berita</a>
 
-            <a href="#" class="block py-3 font-medium hover:text-[#18587A]">Galeri</a>
+            <a href="{{ route('galeri.index') }}" class="block py-3 font-medium hover:text-[#18587A]">Galeri</a>
 
             {{-- Informasi --}}
             <div x-data="{ open:false }">
@@ -409,6 +394,7 @@
 
                 <div
                     x-show="open"
+                    x-cloak
                     x-transition
                     class="pl-4 pb-3 space-y-2 text-gray-600">
 
@@ -426,30 +412,12 @@
 
             <hr class="my-4">
 
-            <div class="flex gap-3">
+            <button
+                class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-[#18587A] hover:text-white transition">
 
-                <button
-                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-[#18587A] hover:text-white transition">
+                <i class="fa-solid fa-magnifying-glass"></i>
 
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                </button>
-
-                <button
-                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-[#18587A] hover:text-white transition">
-
-                    <i class="fa-solid fa-moon"></i>
-
-                </button>
-
-                <a href="#"
-                    class="flex-1 bg-[#18587A] text-center text-white rounded-xl py-3 font-semibold hover:bg-[#134A64] transition">
-
-                    Login Admin
-
-                </a>
-
-            </div>
+            </button>
 
         </div>
 
