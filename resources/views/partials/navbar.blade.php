@@ -243,15 +243,6 @@
 
                         </button>
 
-<<<<<<< HEAD
-                        <button
-                            class="action-btn">
-
-                            <i class="fa-solid fa-moon"></i>
-
-                        </button>
-=======
->>>>>>> 890bfedf81c2d3f95d8760038414e8a338618d38
                     </div>
 
                 </div>
@@ -426,21 +417,7 @@
 
                 <i class="fa-solid fa-magnifying-glass"></i>
 
-<<<<<<< HEAD
-                    <i class="fa-solid fa-magnifying-glass"></i>
-
-                </button>
-
-                <button
-                    class="w-11 h-11 rounded-xl bg-gray-100 hover:bg-[#18587A] hover:text-white transition">
-
-                    <i class="fa-solid fa-moon"></i>
-
-                </button>
-            </div>
-=======
             </button>
->>>>>>> 890bfedf81c2d3f95d8760038414e8a338618d38
 
         </div>
 
@@ -473,4 +450,4 @@ document.addEventListener("alpine:init", () => {
     });
 
 });
-</script>
+</script>   
