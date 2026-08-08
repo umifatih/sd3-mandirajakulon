@@ -22,6 +22,17 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+    <div class="mb-5">
+        <label class="block text-sm font-semibold text-gray-700 mb-2">Kategori</label>
+        <select name="kategori" class="w-full px-4 py-3 rounded-xl bg-[#EBF5FA] border border-transparent focus:border-[#85C2DB] focus:bg-white outline-none text-sm transition">
+            <option value="">Pilih kategori</option>
+            <option value="KBM" {{ old('kategori') === 'KBM' ? 'selected' : '' }}>KBM</option>
+            <option value="Ujian" {{ old('kategori') === 'Ujian' ? 'selected' : '' }}>Ujian</option>
+            <option value="Kegiatan" {{ old('kategori') === 'Kegiatan' ? 'selected' : '' }}>Kegiatan</option>
+            <option value="Libur" {{ old('kategori') === 'Libur' ? 'selected' : '' }}>Libur</option>
+        </select>
+        @error('kategori') <p class="text-red-500 text-xs mt-1">{{ $message }}</p> @enderror
+    </div> 
         <div>
             <label class="block text-sm font-semibold text-gray-700 mb-2">Tanggal Mulai</label>
             <input type="date" name="tanggal_mulai" value="{{ old('tanggal_mulai') }}"

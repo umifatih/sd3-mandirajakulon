@@ -26,7 +26,7 @@
 </style>
 
 <div
-    x-data="beritaApp()"
+    x-data="beritaApp(@js($items))"
     x-init="init()"
 >
 
@@ -89,7 +89,7 @@
     {{-- ===================== BERITA UTAMA (CAROUSEL) + TRENDING ===================== --}}
     <section
         class="pt-16 pb-4 bg-[#EBF5FA]"
-        x-show="!search && activeCategory === 'semua'"
+        x-show="!search && activeCategory === 'semua' && items.length > 0"
         x-cloak>
         <div class="max-w-6xl mx-auto px-6">
 
@@ -237,8 +237,8 @@
                         <div class="w-20 h-20 mx-auto rounded-2xl bg-[#CCE5F0] flex items-center justify-center text-3xl text-[#18587A] mb-4">
                             <i class="fa-regular fa-newspaper"></i>
                         </div>
-                        <h3 class="text-xl font-bold text-gray-700 font-['Poppins']">Belum ada berita ditemukan</h3>
-                        <p class="text-gray-500 text-sm mt-2">Coba ganti kata kunci atau pilih kategori lain.</p>
+                        <h3 class="text-xl font-bold text-gray-700 font-['Poppins']" x-text="items.length === 0 ? 'Belum ada berita dipublikasikan' : 'Belum ada berita ditemukan'"></h3>
+                        <p class="text-gray-500 text-sm mt-2" x-text="items.length === 0 ? 'Admin dapat menambahkannya lewat menu Berita & Pengumuman di dashboard.' : 'Coba ganti kata kunci atau pilih kategori lain.'"></p>
                     </div>
 
                     {{-- Grid --}}
@@ -298,7 +298,7 @@
 
 {{-- ===================== ALPINE DATA ===================== --}}
 <script>
-function beritaApp() {
+function beritaApp(initialItems) {
     return {
         search: '',
         activeCategory: 'semua',
@@ -314,16 +314,10 @@ function beritaApp() {
             { key: 'artikel-guru', label: 'Artikel Guru', icon: 'fa-solid fa-chalkboard-user' },
         ],
 
-        items: [
-            { id: 1, category: 'prestasi', categoryLabel: 'Prestasi', title: 'Siswa SDN 3 Mandiraja Kulon Raih Juara 1 OSN Matematika Tingkat Kabupaten', excerpt: 'Prestasi membanggakan diraih siswa kelas 5 dalam ajang Olimpiade Sains Nasional bidang Matematika tingkat Kabupaten Banjarnegara.', date: '25 Juni 2026', timeAgo: '17 menit', author: 'Admin', readTime: '3 menit', isTrending: true, url: '#', img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=1400' },
-            { id: 2, category: 'pengumuman', categoryLabel: 'Pengumuman', title: 'Hasil Seleksi PPDB Gelombang Pertama 2026', excerpt: 'Pengumuman resmi hasil seleksi Penerimaan Peserta Didik Baru gelombang pertama tahun ajaran 2026/2027.', date: '15 Juni 2026', timeAgo: '35 menit', author: 'Admin', readTime: '2 menit', isTrending: true, url: '#', img: 'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=800' },
-            { id: 3, category: 'prestasi', categoryLabel: 'Prestasi', title: 'Juara Umum Lomba Pramuka Tingkat Kecamatan', excerpt: 'Regu Pramuka SD Negeri 3 Mandiraja Kulon berhasil menyabet gelar juara umum dalam perlombaan tingkat kecamatan.', date: '20 Mei 2026', timeAgo: '1 jam', author: 'Admin', readTime: '4 menit', isTrending: true, url: '#', img: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&fit=crop&q=80&w=800' },
-            { id: 4, category: 'pengumuman', categoryLabel: 'Pengumuman', title: 'Panduan Lengkap Pendaftaran Ulang Siswa Baru', excerpt: 'Berikut tata cara dan berkas yang perlu disiapkan orang tua/wali untuk pendaftaran ulang siswa baru.', date: '10 Juni 2026', timeAgo: '2 jam', author: 'Admin', readTime: '3 menit', isTrending: true, url: '#', img: 'https://images.unsplash.com/photo-1497633762265-9d179a990aa6?auto=format&fit=crop&q=80&w=800' },
-            { id: 5, category: 'kegiatan', categoryLabel: 'Kegiatan Sekolah', title: 'Pentas Seni Akhir Tahun Ajaran Meriahkan Sekolah', excerpt: 'Siswa unjuk bakat menari, menyanyi, dan bermain musik tradisional dalam acara pentas seni tahunan.', date: '10 Jun 2026', timeAgo: '3 jam', author: 'Admin', readTime: '3 menit', isTrending: true, url: '#', img: 'https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&q=80&w=800' },
-            { id: 6, category: 'artikel-guru', categoryLabel: 'Artikel Guru', title: 'Menumbuhkan Minat Baca Sejak Dini di Kelas Rendah', excerpt: 'Tips dari guru kelas 1 tentang cara membiasakan siswa gemar membaca sejak awal masuk sekolah.', date: '1 Jun 2026', timeAgo: '5 jam', author: 'Bu Siti', readTime: '3 menit', isTrending: true, url: '#', img: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&q=80&w=800' },
-            { id: 7, category: 'kegiatan', categoryLabel: 'Kegiatan Sekolah', title: 'Kegiatan Pramuka Latih Kemandirian dan Kerja Sama Siswa', excerpt: 'Latihan rutin pramuka digelar setiap Jumat sore, membentuk karakter disiplin dan gotong royong sejak dini.', date: '5 Jun 2026', timeAgo: '1 hari', author: 'Admin', readTime: '2 menit', isTrending: false, url: '#', img: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=800' },
-            { id: 8, category: 'artikel-guru', categoryLabel: 'Artikel Guru', title: 'Strategi Pembelajaran Aktif, Kreatif, Efektif, dan Menyenangkan', excerpt: 'Bagaimana guru menerapkan metode PAKEM agar suasana kelas lebih hidup dan siswa lebih terlibat.', date: '22 Mei 2026', timeAgo: '2 hari', author: 'Pak Ahmad', readTime: '4 menit', isTrending: false, url: '#', img: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=800' },
-        ],
+        // Data berita dikirim dari controller (tabel `beritas`, status = published),
+        // sudah diurutkan terbaru dulu & dibentuk sesuai shape yang dipakai di sini:
+        // { id, category, categoryLabel, title, excerpt, date, timeAgo, author, readTime, url, img }
+        items: initialItems || [],
 
         init() {
             this.startAutoplay();
@@ -337,14 +331,18 @@ function beritaApp() {
             return this.items.slice(3, 5);
         },
 
+        // Tidak ada kolom "trending" di database — cukup ambil beberapa berita
+        // terbaru (items sudah diurutkan latest() dari controller).
         get trending() {
-            return this.items.filter(i => i.isTrending);
+            return this.items.slice(0, 6);
         },
 
         nextHero() {
+            if (this.heroSlides.length === 0) return;
             this.heroIndex = (this.heroIndex + 1) % this.heroSlides.length;
         },
         prevHero() {
+            if (this.heroSlides.length === 0) return;
             this.heroIndex = (this.heroIndex - 1 + this.heroSlides.length) % this.heroSlides.length;
         },
         startAutoplay() {
@@ -368,7 +366,7 @@ function beritaApp() {
                 const q = this.search.trim().toLowerCase();
                 list = list.filter(i =>
                     i.title.toLowerCase().includes(q) ||
-                    i.excerpt.toLowerCase().includes(q) ||
+                    (i.excerpt || '').toLowerCase().includes(q) ||
                     i.categoryLabel.toLowerCase().includes(q)
                 );
             }

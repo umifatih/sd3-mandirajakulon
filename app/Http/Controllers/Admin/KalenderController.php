@@ -23,6 +23,7 @@ class KalenderController extends Controller
     {
         $validated = $request->validate([
             'kegiatan'         => 'required|string|max:255',
+            'kategori'         => 'required|in:KBM,Ujian,Kegiatan,Libur',
             'tanggal_mulai'    => 'required|date',
             'tanggal_selesai'  => 'nullable|date|after_or_equal:tanggal_mulai',
             'keterangan'       => 'nullable|string',
@@ -42,6 +43,7 @@ class KalenderController extends Controller
     {
         $validated = $request->validate([
             'kegiatan'         => 'required|string|max:255',
+            'kategori'         => 'required|in:KBM,Ujian,Kegiatan,Libur',
             'tanggal_mulai'    => 'required|date',
             'tanggal_selesai'  => 'nullable|date|after_or_equal:tanggal_mulai',
             'keterangan'       => 'nullable|string',

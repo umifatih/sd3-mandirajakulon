@@ -101,17 +101,13 @@
                                 x-transition.opacity.scale.origin.top
                                 class="dropdown-menu">
 
-                                <a href="#" class="dropdown-item">
-                                    <i class="fa-solid fa-school"></i>
-                                    Profil Sekolah
-                                </a>
 
                                 <a href="#" class="dropdown-item">
                                     <i class="fa-solid fa-landmark"></i>
                                     Sejarah
                                 </a>
 
-                                <a href="#" class="dropdown-item">
+                                <a href="{{ route('profile.visi-misi') }}" class="dropdown-item">
                                     <i class="fa-solid fa-bullseye"></i>
                                     Visi & Misi
                                 </a>
@@ -285,9 +281,8 @@
                     x-transition
                     class="pl-4 pb-3 space-y-2 text-gray-600">
 
-                    <a href="#" class="block">Profil Sekolah</a>
                     <a href="#" class="block">Sejarah</a>
-                    <a href="#" class="block">Visi & Misi</a>
+                    <a href="{{ route('profile.visi-misi') }}" class="block">Visi & Misi</a>
                     <a href="{{ route('profile.struktur') }}" class="block">Struktur Organisasi</a>
                     <a href="{{ route('profile.sarana') }}" class="block">Sarana Prasarana</a>
                     <a href="{{ route('profile.ekstrakurikuler') }}" class="block">Ekstrakurikuler</a>

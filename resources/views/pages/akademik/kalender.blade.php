@@ -19,7 +19,7 @@
     .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
 </style>
 
-<div x-data="calendarApp()" x-init="initCalendar()">
+<div x-data="calendarApp(@js($kegiatanSekolah))" x-init="initCalendar()">
 
     {{-- ===================== HERO / PAGE HEADER ===================== --}}
     <section class="relative pt-40 pb-20 flex items-center justify-center overflow-hidden bg-[#092B3A]">
@@ -243,7 +243,7 @@
 
 {{-- ===================== ALPINE JS LOGIC ===================== --}}
 <script>
-    function calendarApp() {
+    function calendarApp(initialSchoolEvents) {
         const today = new Date();
 
         return {
@@ -259,17 +259,10 @@
             selectedMonth: today.getMonth(),
             selectedYear: today.getFullYear(),
 
-            // AGENDA INTERNAL SEKOLAH
-            schoolEvents: [
-                { date: '2026-07-13', title: 'Hari Pertama Masuk & MPLS', category: 'KBM', dotColor: 'bg-[#10B981]' },
-                { date: '2026-07-14', title: 'Masa Pengenalan Lingkungan Sekolah', category: 'Kegiatan', dotColor: 'bg-[#3E9FC6]' },
-                { date: '2026-07-15', title: 'Masa Pengenalan Lingkungan Sekolah', category: 'Kegiatan', dotColor: 'bg-[#3E9FC6]' },
-                { date: '2026-09-21', title: 'Penilaian Tengah Semester (PTS)', category: 'Ujian', dotColor: 'bg-[#F59E0B]' },
-                { date: '2026-09-22', title: 'Penilaian Tengah Semester (PTS)', category: 'Ujian', dotColor: 'bg-[#F59E0B]' },
-                { date: '2026-09-23', title: 'Penilaian Tengah Semester (PTS)', category: 'Ujian', dotColor: 'bg-[#F59E0B]' },
-                { date: '2026-12-01', title: 'Penilaian Akhir Semester (PAS)', category: 'Ujian', dotColor: 'bg-[#F59E0B]' },
-                { date: '2027-01-04', title: 'Awal Masuk Semester Genap', category: 'KBM', dotColor: 'bg-[#10B981]' },
-            ],
+            // AGENDA INTERNAL SEKOLAH — dikirim dari controller (tabel `kalender_akademiks`),
+            // sudah dipecah per-tanggal & dikasih dotColor sesuai kategori.
+            // Shape: { date: 'YYYY-MM-DD', title, category, dotColor }
+            schoolEvents: initialSchoolEvents || [],
 
             async initCalendar() {
                 await this.fetchNationalHolidays(this.year);

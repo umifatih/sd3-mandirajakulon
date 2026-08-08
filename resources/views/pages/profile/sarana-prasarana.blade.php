@@ -26,7 +26,7 @@
 </style>
 
 <div
-    x-data="saranaApp()"
+    x-data="saranaApp(@js($sarana))"
     x-init="init()"
 >
 
@@ -118,8 +118,8 @@
                 <div class="w-20 h-20 mx-auto rounded-2xl bg-white flex items-center justify-center text-3xl text-[#18587A] mb-4">
                     <i class="fa-solid fa-building-circle-xmark"></i>
                 </div>
-                <h3 class="text-xl font-bold text-gray-700 font-['Poppins']">Belum ada fasilitas ditemukan</h3>
-                <p class="text-gray-500 text-sm mt-2">Coba ganti kata kunci atau pilih kategori lain.</p>
+                <h3 class="text-xl font-bold text-gray-700 font-['Poppins']" x-text="items.length === 0 ? 'Belum ada data sarana & prasarana' : 'Belum ada fasilitas ditemukan'"></h3>
+                <p class="text-gray-500 text-sm mt-2" x-text="items.length === 0 ? 'Admin dapat menambahkannya lewat menu Sarana & Prasarana di dashboard.' : 'Coba ganti kata kunci atau pilih kategori lain.'"></p>
             </div>
 
             {{-- Grid --}}
@@ -140,7 +140,7 @@
 
                         {{-- Kondisi Badge --}}
                         <div class="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-semibold shadow-sm"
-                             :class="item.condition === 'Baik' ? 'bg-green-500/90 text-white' : 'bg-amber-500/90 text-white'">
+                             :class="item.condition === 'Baik' ? 'bg-green-500/90 text-white' : (item.condition === 'Cukup' ? 'bg-amber-500/90 text-white' : 'bg-red-500/90 text-white')">
                             <i class="fa-solid fa-circle-check text-[10px]"></i>
                             <span x-text="item.condition"></span>
                         </div>
@@ -236,7 +236,7 @@
 
 {{-- ===================== ALPINE DATA ===================== --}}
 <script>
-function saranaApp() {
+function saranaApp(initialItems) {
     return {
         search: '',
         activeCategory: 'semua',
@@ -251,23 +251,13 @@ function saranaApp() {
             { key: 'ibadah', label: 'Ibadah & Kesehatan', icon: 'fa-solid fa-hand-holding-heart' },
         ],
 
-        items: [
-            { id: 1, category: 'belajar', categoryLabel: 'Ruang Belajar', name: 'Ruang Kelas', desc: 'Ruang kelas yang nyaman dan tertata rapi, dilengkapi meja-kursi standar dan pencahayaan alami yang cukup untuk mendukung konsentrasi belajar siswa.', size: '7 x 8 m', qty: '6 Ruang', condition: 'Baik', img: 'https://images.unsplash.com/photo-1588072432836-e10032774350?auto=format&fit=crop&q=80&w=900' },
-            { id: 2, category: 'penunjang', categoryLabel: 'Penunjang', name: 'Perpustakaan Sekolah', desc: 'Ruang baca dengan koleksi ratusan judul buku pelajaran, cerita anak, dan referensi umum untuk menumbuhkan minat literasi siswa sejak dini.', size: '6 x 7 m', qty: '1 Ruang', condition: 'Baik', img: 'https://images.unsplash.com/photo-1481627834876-b7833e8f5570?auto=format&fit=crop&q=80&w=900' },
-            { id: 3, category: 'belajar', categoryLabel: 'Ruang Belajar', name: 'Laboratorium Komputer', desc: 'Fasilitas komputer untuk pengenalan teknologi informasi dan literasi digital sejak jenjang sekolah dasar, terhubung dengan jaringan internet sekolah.', size: '6 x 6 m', qty: '1 Ruang · 15 Unit PC', condition: 'Baik', img: 'https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&q=80&w=900' },
-            { id: 4, category: 'olahraga', categoryLabel: 'Olahraga', name: 'Lapangan Upacara & Olahraga', desc: 'Lapangan multifungsi yang digunakan untuk upacara bendera setiap Senin, kegiatan olahraga, serta latihan pramuka dan ekstrakurikuler lainnya.', size: '20 x 30 m', qty: '1 Lapangan', condition: 'Baik', img: 'https://images.unsplash.com/photo-1546410531-bb4caa6b424d?auto=format&fit=crop&q=80&w=900' },
-            { id: 5, category: 'ibadah', categoryLabel: 'Ibadah & Kesehatan', name: 'Mushola Sekolah', desc: 'Tempat ibadah bagi warga sekolah, digunakan untuk sholat berjamaah dan kegiatan keagamaan seperti pembiasaan mengaji setiap pagi.', size: '5 x 6 m', qty: '1 Ruang', condition: 'Baik', img: 'https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&q=80&w=900' },
-            { id: 6, category: 'ibadah', categoryLabel: 'Ibadah & Kesehatan', name: 'UKS (Unit Kesehatan Sekolah)', desc: 'Ruang kesehatan sekolah dengan tempat tidur dan perlengkapan P3K dasar untuk penanganan pertama siswa yang sakit atau cedera ringan.', size: '3 x 4 m', qty: '1 Ruang', condition: 'Cukup', img: 'https://images.unsplash.com/photo-1580281657702-257584239a55?auto=format&fit=crop&q=80&w=900' },
-            { id: 7, category: 'penunjang', categoryLabel: 'Penunjang', name: 'Kantin Sekolah', desc: 'Area jajan sehat bagi siswa saat jam istirahat, menyediakan makanan dan minuman ringan yang terjaga kebersihannya.', size: '4 x 6 m', qty: '2 Kios', condition: 'Baik', img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&q=80&w=900' },
-            { id: 8, category: 'penunjang', categoryLabel: 'Penunjang', name: 'Ruang Guru & Kepala Sekolah', desc: 'Ruang kerja bagi tenaga pendidik dan kepala sekolah untuk administrasi, persiapan mengajar, serta menerima tamu dan wali murid.', size: '5 x 8 m', qty: '2 Ruang', condition: 'Baik', img: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&q=80&w=900' },
-            { id: 9, category: 'penunjang', categoryLabel: 'Penunjang', name: 'Toilet & Kamar Mandi', desc: 'Fasilitas sanitasi terpisah untuk siswa putra dan putri, dijaga kebersihannya secara rutin oleh petugas kebersihan sekolah.', size: '2 x 3 m', qty: '8 Bilik', condition: 'Cukup', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=900' },
-            { id: 10, category: 'olahraga', categoryLabel: 'Olahraga', name: 'Gudang Alat Olahraga & Pramuka', desc: 'Ruang penyimpanan peralatan olahraga, perlengkapan pramuka, dan alat kesenian yang digunakan dalam kegiatan ekstrakurikuler.', size: '3 x 4 m', qty: '1 Ruang', condition: 'Baik', img: 'https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&q=80&w=900' },
-            { id: 11, category: 'penunjang', categoryLabel: 'Penunjang', name: 'Area Parkir', desc: 'Area parkir kendaraan bagi guru, staf, dan tamu sekolah yang tertata rapi di bagian depan area sekolah.', size: '4 x 15 m', qty: '1 Area', condition: 'Baik', img: 'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?auto=format&fit=crop&q=80&w=900' },
-            { id: 12, category: 'belajar', categoryLabel: 'Ruang Belajar', name: 'Taman & Ruang Terbuka Hijau', desc: 'Area hijau di lingkungan sekolah yang mendukung kegiatan belajar di luar kelas dan mendukung status Sekolah Adiwiyata.', size: '10 x 12 m', qty: '1 Area', condition: 'Baik', img: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=900' },
-        ],
+        // Data sarana & prasarana dikirim dari controller (tabel `saranas`),
+        // sudah dibentuk sesuai shape yang dipakai kartu & modal di sini:
+        // { id, category, categoryLabel, name, desc, size, qty, condition, img }
+        items: initialItems || [],
 
         init() {
-            // no-op placeholder untuk future async data loading (mis. fetch dari controller)
+            // no-op placeholder, data sudah masuk lewat parameter saranaApp()
         },
 
         get filteredItems() {
@@ -303,4 +293,4 @@ function saranaApp() {
 }
 </script>
 
-@endsection 
+@endsection
