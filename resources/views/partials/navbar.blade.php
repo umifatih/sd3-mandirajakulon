@@ -131,11 +131,6 @@
                                     Ekstrakurikuler
                                 </a>
 
-                                <a href="{{ route('profile.prestasi') }}" class="dropdown-item">
-                                    <i class="fa-solid fa-trophy"></i>
-                                    Prestasi Sekolah
-                                </a>
-
                             </div>
 
                         </div>
@@ -173,10 +168,6 @@
                                     Siswa
                                 </a>
 
-                                <a href="#" class="dropdown-item">
-                                    <i class="fa-solid fa-users"></i>
-                                    Alumni
-                                </a>
 
                             </div>
 
@@ -206,18 +197,8 @@
                                 class="dropdown-menu">
 
                                 <a href="{{ route('akademik.kalender') }}" class="dropdown-item">
-    <i class="fa-solid fa-calendar"></i>
-    Kalender Akademik
-</a>
-
-                                <a href="{{ route('akademik.program-unggulan') }}" class="dropdown-item">
-                                    <i class="fa-solid fa-lightbulb"></i>
-                                    Program Unggulan
-                                </a>
-
-                                <a href="#" class="dropdown-item">
-                                    <i class="fa-solid fa-medal"></i>
-                                    Prestasi Akademik
+                                    <i class="fa-solid fa-calendar"></i>
+                                    Kalender Akademik
                                 </a>
 
                             </div>
@@ -225,8 +206,6 @@
                         </div>
 
                         <a href="{{ route('berita.index') }}" class="nav-link">Berita</a>
-
-                        <a href="{{ route('galeri.index') }}" class="nav-link">Galeri</a>
 
                         <a href="#" class="nav-link">Kontak</a>
 
@@ -312,8 +291,6 @@
                     <a href="{{ route('profile.struktur') }}" class="block">Struktur Organisasi</a>
                     <a href="{{ route('profile.sarana') }}" class="block">Sarana Prasarana</a>
                     <a href="{{ route('profile.ekstrakurikuler') }}" class="block">Ekstrakurikuler</a>
-                    <a href="{{ route('profile.prestasi') }}" class="block">Prestasi</a>
-
                 </div>
 
             </div>
@@ -340,8 +317,8 @@
 
                     <a href="#" class="block">Guru</a>
                     <a href="#" class="block">Siswa</a>
-                    <a href="#" class="block">Alumni</a>
-
+        
+            
                 </div>
 
             </div>
@@ -367,16 +344,12 @@
                     class="pl-4 pb-3 space-y-2 text-gray-600">
 
                     <a href="{{ route('akademik.kalender') }}" class="block">Kalender Akademik</a>
-                    <a href="{{ route('akademik.program-unggulan') }}" class="block">Program Unggulan</a>
-                    <a href="#" class="block">Prestasi Akademik</a>
 
                 </div>
 
             </div>
 
             <a href="{{ route('berita.index') }}" class="block py-3 font-medium hover:text-[#18587A]">Berita</a>
-
-            <a href="{{ route('galeri.index') }}" class="block py-3 font-medium hover:text-[#18587A]">Galeri</a>
 
             {{-- Informasi --}}
             <div x-data="{ open:false }">

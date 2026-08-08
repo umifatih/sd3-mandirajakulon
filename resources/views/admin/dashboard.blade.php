@@ -35,38 +35,6 @@
             </div>
         </div>
 
-        {{-- Total Galeri --}}
-        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex items-center gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#61B1D0] to-[#18587A] flex items-center justify-center text-2xl text-white shadow-md shrink-0">
-                <i class="fa-regular fa-images"></i>
-            </div>
-            <div>
-                <p class="text-2xl font-black text-gray-800 font-['Poppins']">{{ $totalGaleri ?? 0 }}</p>
-                <p class="text-sm text-gray-400">Foto Galeri</p>
-            </div>
-        </div>
-
-        {{-- Total Prestasi --}}
-        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex items-center gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-2xl text-white shadow-md shrink-0">
-                <i class="fa-solid fa-trophy"></i>
-            </div>
-            <div>
-                <p class="text-2xl font-black text-gray-800 font-['Poppins']">{{ $totalPrestasi ?? 0 }}</p>
-                <p class="text-sm text-gray-400">Prestasi Tercatat</p>
-            </div>
-        </div>
-
-        {{-- Total Warga --}}
-        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex items-center gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
-            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-2xl text-white shadow-md shrink-0">
-                <i class="fa-solid fa-users"></i>
-            </div>
-            <div>
-                <p class="text-2xl font-black text-gray-800 font-['Poppins']">{{ $totalWarga ?? 0 }}</p>
-                <p class="text-sm text-gray-400">Data Warga Sekolah</p>
-            </div>
-        </div>
 
     </div>
 
@@ -107,16 +75,16 @@
                                 </span>
                             </td>
                             <td class="px-6 py-4 text-right">
-                                <a href="{{ route('admin.berita.edit', $berita) }}" class="text-[#18587A] hover:text-[#092B3A] mr-3">
+                                <a href="{{ route('admin.berita.edit', $berita->id) }}" class="text-[#18587A] hover:text-[#092B3A] mr-3">
                                     <i class="fa-regular fa-pen-to-square"></i>
                                 </a>
                                 <button
                                     type="button"
-                                    onclick="document.getElementById('hapus-{{ $berita->slug }}').submit()"
+                                    onclick="document.getElementById('hapus-{{ $berita->id }}').submit()"
                                     class="text-red-500 hover:text-red-700">
                                     <i class="fa-regular fa-trash-can"></i>
                                 </button>
-                                <form id="hapus-{{ $berita->slug }}" action="{{ route('admin.berita.destroy', $berita) }}" method="POST" class="hidden">
+                                <form id="hapus-{{ $berita->id }}" action="{{ route('admin.berita.destroy', $berita->id) }}" method="POST" class="hidden">
                                     @csrf
                                     @method('DELETE')
                                 </form>
@@ -147,18 +115,6 @@
                     <a href="{{ route('admin.berita.create') }}" class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-[#EBF5FA] hover:bg-[#18587A] hover:text-white text-[#18587A] transition-all group">
                         <i class="fa-regular fa-square-plus text-xl"></i>
                         <span class="text-xs font-semibold text-center">Tulis Berita</span>
-                    </a>
-                    <a href="{{ route('admin.galeri.create') }}" class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-[#EBF5FA] hover:bg-[#18587A] hover:text-white text-[#18587A] transition-all group">
-                        <i class="fa-regular fa-image text-xl"></i>
-                        <span class="text-xs font-semibold text-center">Unggah Foto</span>
-                    </a>
-                    <a href="{{ route('admin.prestasi.create') }}" class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-[#EBF5FA] hover:bg-[#18587A] hover:text-white text-[#18587A] transition-all group">
-                        <i class="fa-solid fa-trophy text-xl"></i>
-                        <span class="text-xs font-semibold text-center">Tambah Prestasi</span>
-                    </a>
-                    <a href="{{ route('admin.warga.create') }}" class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-[#EBF5FA] hover:bg-[#18587A] hover:text-white text-[#18587A] transition-all group">
-                        <i class="fa-solid fa-user-plus text-xl"></i>
-                        <span class="text-xs font-semibold text-center">Data Warga</span>
                     </a>
                 </div>
             </div>

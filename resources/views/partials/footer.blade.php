@@ -22,7 +22,6 @@
                     <li><a href="#" class="text-[#EBF5FA]/80 hover:text-[#85C2DB] transition-colors">Profil Sekolah</a></li>
                     <li><a href="#" class="text-[#EBF5FA]/80 hover:text-[#85C2DB] transition-colors">Akademik</a></li>
                     <li><a href="#" class="text-[#EBF5FA]/80 hover:text-[#85C2DB] transition-colors">Berita & Kegiatan</a></li>
-                    <li><a href="#" class="text-[#EBF5FA]/80 hover:text-[#85C2DB] transition-colors">Galeri</a></li>
                     <li><a href="#" class="text-[#EBF5FA]/80 hover:text-[#85C2DB] transition-colors">Kontak</a></li>
                 </ul>
             </div>
