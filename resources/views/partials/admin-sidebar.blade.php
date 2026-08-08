@@ -5,9 +5,9 @@
 
 {{-- Sidebar Container --}}
 <aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'"
-       class="fixed inset-y-0 left-0 z-50 w-64 bg-[#092B3A] text-white transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 flex flex-col justify-between shrink-0">
+       class="fixed inset-y-0 left-0 z-50 w-64 h-full bg-[#092B3A] text-white transition-transform duration-300 ease-in-out lg:static lg:translate-x-0 flex flex-col justify-between shrink-0">
     
-    <div>
+    <div class="flex-1 min-h-0 overflow-y-auto">
         {{-- Header / Logo Sekolah --}}
         <div class="h-20 flex items-center px-6 gap-3 border-b border-slate-700/50 bg-[#061e29]">
             <img src="{{ asset('logo_SD3.png') }}" alt="Logo" class="w-10 h-10 object-cover">
@@ -52,7 +52,7 @@
 
             {{-- Profil & Pengaturan Website --}}
             <a href="#" class="flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all text-slate-300 hover:text-white hover:bg-[#18587A]">
-                <i class="fa-solid fa-[#85C2DB] fa-sliders w-5 text-center text-[#85C2DB]"></i>
+                <i class="fa-solid fa-sliders w-5 text-center text-[#85C2DB]"></i>
                 <span>Pengaturan Web</span>
             </a>
 
@@ -60,7 +60,7 @@
     </div>
 
     {{-- Footer Sidebar / Logout --}}
-    <div class="p-4 border-t border-slate-700/50 bg-[#061e29]">
+    <div class="shrink-0 p-4 border-t border-slate-700/50 bg-[#061e29]">
         <a href="/" target="_blank" class="flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-semibold text-slate-300 hover:text-white hover:bg-slate-800 mb-2 transition-all">
             <i class="fa-solid fa-arrow-up-right-from-square text-[#85C2DB]"></i> Lihat Website Utama
         </a>

@@ -1,185 +1,193 @@
-<!DOCTYPE html>
-<html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard Admin - SD Negeri 3 Mandiraja Kulon</title>
-    
-    {{-- Fonts & Icons --}}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+@extends('layouts.admin')
 
-    {{-- Alpine.js (Untuk Interaksi Buka-Tutup Sidebar) --}}
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+@section('title', 'Dashboard')
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <style> body { font-family: 'Poppins', sans-serif; } </style>
-</head>
+@section('content')
 
-<!-- Alpine JS wrapper untuk state sidebar -->
-<body x-data="{ sidebarOpen: false }" class="bg-gray-50 flex h-screen overflow-hidden">
+<div x-data="{ init() {} }" x-init="init()">
 
-    {{-- Overlay untuk versi Mobile --}}
-    <div x-show="sidebarOpen" x-transition.opacity 
-         @click="sidebarOpen = false"
-         class="fixed inset-0 z-20 bg-black/50 lg:hidden"></div>
-
-    {{-- ================= SIDEBAR ================= --}}
-    <aside :class="sidebarOpen ? 'translate-x-0' : '-translate-x-full'" 
-           class="fixed inset-y-0 left-0 z-30 w-64 bg-[#092B3A] text-white transition-transform duration-300 lg:static lg:translate-x-0 flex flex-col shadow-2xl">
-        
-        {{-- Header Sidebar --}}
-        <div class="flex items-center justify-center h-20 border-b border-white/10 px-4">
-            <div class="flex items-center gap-3">
-                <img src="{{ asset('logo_SD3.png') }}" alt="Logo" class="w-10 h-10 object-contain bg-white rounded-full p-1">
-                <div>
-                    <h2 class="text-sm font-bold uppercase tracking-wider">Portal Admin</h2>
-                    <p class="text-[10px] text-gray-400">SDN 3 Mandiraja Kulon</p>
-                </div>
-            </div>
+    {{-- ===================== HEADER ===================== --}}
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+        <div>
+            <h1 class="text-2xl md:text-3xl font-black text-gray-800 font-['Poppins']">
+                Selamat Datang, {{ auth()->user()->name ?? 'Admin' }} 👋
+            </h1>
+            <p class="text-gray-500 mt-1">Berikut ringkasan aktivitas website sekolah hari ini.</p>
         </div>
 
-        {{-- Menu Navigasi --}}
-        <nav class="flex-1 px-4 py-6 space-y-2 overflow-y-auto">
-            <!-- Menu Aktif (Dashboard) -->
-            <a href="{{ route('admin.dashboard') }}" class="flex items-center gap-3 px-4 py-3 bg-[#18587A] text-white rounded-xl transition-colors">
-                <i class="fa-solid fa-house w-5 text-center"></i>
-                <span class="text-sm font-medium">Dashboard</span>
-            </a>
-
-            <!-- Contoh Menu Lainnya -->
-            <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-white/10 rounded-xl transition-colors">
-                <i class="fa-solid fa-newspaper w-5 text-center"></i>
-                <span class="text-sm font-medium">Kelola Berita</span>
-            </a>
-
-            <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-white/10 rounded-xl transition-colors">
-                <i class="fa-solid fa-images w-5 text-center"></i>
-                <span class="text-sm font-medium">Galeri Sekolah</span>
-            </a>
-
-            <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-white/10 rounded-xl transition-colors">
-                <i class="fa-solid fa-users w-5 text-center"></i>
-                <span class="text-sm font-medium">Data Warga</span>
-            </a>
-            
-            <a href="#" class="flex items-center gap-3 px-4 py-3 text-gray-300 hover:bg-white/10 rounded-xl transition-colors">
-                <i class="fa-solid fa-graduation-cap w-5 text-center"></i>
-                <span class="text-sm font-medium">Info PPDB</span>
-            </a>
-        </nav>
-
-        {{-- Footer Sidebar (Tombol Logout) --}}
-        <div class="p-4 border-t border-white/10">
-            <form method="POST" action="{{ route('admin.logout') }}">
-                @csrf
-                <button type="submit" class="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-rose-500 hover:bg-rose-600 text-white rounded-lg text-sm font-medium transition-colors">
-                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                    Keluar / Logout
-                </button>
-            </form>
+        <div class="flex items-center gap-2 px-4 py-2.5 bg-white rounded-xl shadow-sm border border-gray-100 text-sm text-gray-500">
+            <i class="fa-regular fa-calendar text-[#18587A]"></i>
+            <span>{{ now()->translatedFormat('l, d F Y') }}</span>
         </div>
-    </aside>
-
-    {{-- ================= KONTEN UTAMA ================= --}}
-    <div class="flex-1 flex flex-col overflow-hidden">
-        
-        {{-- Navbar Atas --}}
-        <header class="flex items-center justify-between px-6 py-4 bg-white border-b border-gray-200">
-            <div class="flex items-center gap-4">
-                {{-- Tombol Hamburger (Mobile) --}}
-                <button @click="sidebarOpen = true" class="text-gray-500 focus:outline-none lg:hidden hover:text-[#18587A]">
-                    <i class="fa-solid fa-bars text-xl"></i>
-                </button>
-                <h1 class="text-xl font-bold text-gray-800 hidden sm:block">Dashboard Overview</h1>
-            </div>
-
-            {{-- Profil Admin --}}
-            <div class="flex items-center gap-3">
-                <span class="text-sm font-medium text-gray-700 hidden md:block">Halo, Administrator</span>
-                <div class="w-10 h-10 rounded-full bg-[#18587A] text-white flex items-center justify-center font-bold">
-                    <i class="fa-solid fa-user-tie"></i>
-                </div>
-            </div>
-        </header>
-
-        {{-- Area Konten (Scrollable) --}}
-        <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-50/50 p-6">
-            
-            {{-- Ucapan Selamat Datang --}}
-            <div class="mb-8 bg-gradient-to-r from-[#092B3A] to-[#18587A] rounded-2xl p-6 md:p-8 text-white shadow-lg relative overflow-hidden">
-                <div class="relative z-10">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-2">Selamat Datang di Portal Admin! 👋</h2>
-                    <p class="text-white/80 text-sm md:text-base max-w-2xl">
-                        Ini adalah pusat kendali website SD Negeri 3 Mandiraja Kulon. Anda dapat mengelola berita, galeri, informasi PPDB, dan data sekolah dari halaman ini.
-                    </p>
-                </div>
-                {{-- Dekorasi Abstrak --}}
-                <i class="fa-solid fa-shapes absolute -right-4 -bottom-4 text-[120px] text-white/10 transform rotate-12"></i>
-            </div>
-
-            {{-- Widget Statistik (Cards) --}}
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                
-                {{-- Card 1 --}}
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
-                    <div class="w-14 h-14 rounded-full bg-blue-50 text-blue-500 flex items-center justify-center text-2xl">
-                        <i class="fa-solid fa-newspaper"></i>
-                    </div>
-                    <div>
-                        <p class="text-sm font-medium text-gray-500">Total Berita</p>
-                        <h3 class="text-2xl font-bold text-gray-800">24</h3>
-                    </div>
-                </div>
-
-                {{-- Card 2 --}}
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
-                    <div class="w-14 h-14 rounded-full bg-emerald-50 text-emerald-500 flex items-center justify-center text-2xl">
-                        <i class="fa-solid fa-images"></i>
-                    </div>
-                    <div>
-                        <p class="text-sm font-medium text-gray-500">Galeri Foto</p>
-                        <h3 class="text-2xl font-bold text-gray-800">45</h3>
-                    </div>
-                </div>
-
-                {{-- Card 3 --}}
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
-                    <div class="w-14 h-14 rounded-full bg-amber-50 text-amber-500 flex items-center justify-center text-2xl">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-                    <div>
-                        <p class="text-sm font-medium text-gray-500">Total Siswa</p>
-                        <h3 class="text-2xl font-bold text-gray-800">186</h3>
-                    </div>
-                </div>
-
-                {{-- Card 4 --}}
-                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex items-center gap-4 hover:shadow-md transition">
-                    <div class="w-14 h-14 rounded-full bg-purple-50 text-purple-500 flex items-center justify-center text-2xl">
-                        <i class="fa-solid fa-chalkboard-user"></i>
-                    </div>
-                    <div>
-                        <p class="text-sm font-medium text-gray-500">Total Guru</p>
-                        <h3 class="text-2xl font-bold text-gray-800">12</h3>
-                    </div>
-                </div>
-
-            </div>
-
-            {{-- Area Tabel / Aktivitas Terakhir (Placeholder) --}}
-            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-                <h3 class="text-lg font-bold text-gray-800 mb-4">Aktivitas Terakhir</h3>
-                <div class="text-center py-10 text-gray-400 text-sm">
-                    <i class="fa-solid fa-box-open text-4xl mb-3"></i>
-                    <p>Belum ada aktivitas terbaru.</p>
-                </div>
-            </div>
-
-        </main>
     </div>
 
-</body>
-</html>
+    {{-- ===================== STAT CARDS ===================== --}}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
+
+        {{-- Total Berita --}}
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex items-center gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#18587A] to-[#092B3A] flex items-center justify-center text-2xl text-white shadow-md shrink-0">
+                <i class="fa-regular fa-newspaper"></i>
+            </div>
+            <div>
+                <p class="text-2xl font-black text-gray-800 font-['Poppins']">{{ $totalBerita ?? 0 }}</p>
+                <p class="text-sm text-gray-400">Total Berita</p>
+            </div>
+        </div>
+
+        {{-- Total Galeri --}}
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex items-center gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#61B1D0] to-[#18587A] flex items-center justify-center text-2xl text-white shadow-md shrink-0">
+                <i class="fa-regular fa-images"></i>
+            </div>
+            <div>
+                <p class="text-2xl font-black text-gray-800 font-['Poppins']">{{ $totalGaleri ?? 0 }}</p>
+                <p class="text-sm text-gray-400">Foto Galeri</p>
+            </div>
+        </div>
+
+        {{-- Total Prestasi --}}
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex items-center gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 flex items-center justify-center text-2xl text-white shadow-md shrink-0">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+            <div>
+                <p class="text-2xl font-black text-gray-800 font-['Poppins']">{{ $totalPrestasi ?? 0 }}</p>
+                <p class="text-sm text-gray-400">Prestasi Tercatat</p>
+            </div>
+        </div>
+
+        {{-- Total Warga --}}
+        <div class="bg-white rounded-2xl p-6 shadow-md border border-gray-100 flex items-center gap-4 hover:-translate-y-1 hover:shadow-lg transition-all duration-300">
+            <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-emerald-700 flex items-center justify-center text-2xl text-white shadow-md shrink-0">
+                <i class="fa-solid fa-users"></i>
+            </div>
+            <div>
+                <p class="text-2xl font-black text-gray-800 font-['Poppins']">{{ $totalWarga ?? 0 }}</p>
+                <p class="text-sm text-gray-400">Data Warga Sekolah</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+        {{-- ===================== BERITA TERBARU (TABEL) ===================== --}}
+        <div class="lg:col-span-2 bg-white rounded-2xl shadow-md border border-gray-100 overflow-hidden">
+
+            <div class="flex items-center justify-between px-6 py-5 border-b border-gray-100">
+                <h2 class="font-black text-gray-800 font-['Poppins'] text-lg">Berita Terbaru</h2>
+                <a href="{{ route('admin.berita.index') }}" class="text-xs font-semibold text-[#18587A] hover:underline flex items-center gap-1">
+                    Lihat Semua
+                    <i class="fa-solid fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm">
+                    <thead>
+                        <tr class="text-left text-gray-400 uppercase text-[11px] tracking-wide bg-[#EBF5FA]">
+                            <th class="px-6 py-3 font-semibold">Judul</th>
+                            <th class="px-6 py-3 font-semibold">Kategori</th>
+                            <th class="px-6 py-3 font-semibold">Tanggal</th>
+                            <th class="px-6 py-3 font-semibold">Status</th>
+                            <th class="px-6 py-3 font-semibold text-right">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-50">
+                        @forelse (($beritaTerbaru ?? []) as $berita)
+                        <tr class="hover:bg-[#EBF5FA]/50 transition-colors">
+                            <td class="px-6 py-4 font-semibold text-gray-700 max-w-xs truncate">{{ $berita->judul }}</td>
+                            <td class="px-6 py-4 text-gray-500">{{ $berita->kategori }}</td>
+                            <td class="px-6 py-4 text-gray-500">{{ $berita->created_at->translatedFormat('d M Y') }}</td>
+                            <td class="px-6 py-4">
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] font-bold
+                                    {{ $berita->status === 'published' ? 'bg-emerald-50 text-emerald-600' : 'bg-amber-50 text-amber-600' }}">
+                                    {{ $berita->status === 'published' ? 'Terbit' : 'Draft' }}
+                                </span>
+                            </td>
+                            <td class="px-6 py-4 text-right">
+                                <a href="{{ route('admin.berita.edit', $berita) }}" class="text-[#18587A] hover:text-[#092B3A] mr-3">
+                                    <i class="fa-regular fa-pen-to-square"></i>
+                                </a>
+                                <button
+                                    type="button"
+                                    onclick="document.getElementById('hapus-{{ $berita->slug }}').submit()"
+                                    class="text-red-500 hover:text-red-700">
+                                    <i class="fa-regular fa-trash-can"></i>
+                                </button>
+                                <form id="hapus-{{ $berita->slug }}" action="{{ route('admin.berita.destroy', $berita) }}" method="POST" class="hidden">
+                                    @csrf
+                                    @method('DELETE')
+                                </form>
+                            </td>
+                        </tr>
+                        @empty
+                        <tr>
+                            <td colspan="5" class="px-6 py-12 text-center text-gray-400">
+                                <i class="fa-regular fa-newspaper text-2xl mb-2 block"></i>
+                                Belum ada berita. Yuk mulai tulis berita pertama!
+                            </td>
+                        </tr>
+                        @endforelse
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+        {{-- ===================== QUICK ACTIONS + AKTIVITAS ===================== --}}
+        <div class="space-y-6">
+
+            {{-- Quick Actions --}}
+            <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
+                <h2 class="font-black text-gray-800 font-['Poppins'] text-lg mb-4">Aksi Cepat</h2>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <a href="{{ route('admin.berita.create') }}" class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-[#EBF5FA] hover:bg-[#18587A] hover:text-white text-[#18587A] transition-all group">
+                        <i class="fa-regular fa-square-plus text-xl"></i>
+                        <span class="text-xs font-semibold text-center">Tulis Berita</span>
+                    </a>
+                    <a href="{{ route('admin.galeri.create') }}" class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-[#EBF5FA] hover:bg-[#18587A] hover:text-white text-[#18587A] transition-all group">
+                        <i class="fa-regular fa-image text-xl"></i>
+                        <span class="text-xs font-semibold text-center">Unggah Foto</span>
+                    </a>
+                    <a href="{{ route('admin.prestasi.create') }}" class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-[#EBF5FA] hover:bg-[#18587A] hover:text-white text-[#18587A] transition-all group">
+                        <i class="fa-solid fa-trophy text-xl"></i>
+                        <span class="text-xs font-semibold text-center">Tambah Prestasi</span>
+                    </a>
+                    <a href="{{ route('admin.warga.create') }}" class="flex flex-col items-center justify-center gap-2 p-4 rounded-xl bg-[#EBF5FA] hover:bg-[#18587A] hover:text-white text-[#18587A] transition-all group">
+                        <i class="fa-solid fa-user-plus text-xl"></i>
+                        <span class="text-xs font-semibold text-center">Data Warga</span>
+                    </a>
+                </div>
+            </div>
+
+            {{-- Aktivitas Terbaru --}}
+            <div class="bg-white rounded-2xl shadow-md border border-gray-100 p-6">
+                <h2 class="font-black text-gray-800 font-['Poppins'] text-lg mb-4">Aktivitas Terbaru</h2>
+
+                <ul class="space-y-4">
+                    @forelse (($aktivitas ?? []) as $log)
+                    <li class="flex items-start gap-3">
+                        <span class="w-8 h-8 rounded-full bg-[#EBF5FA] text-[#18587A] flex items-center justify-center text-xs shrink-0 mt-0.5">
+                            <i class="fa-solid fa-clock-rotate-left"></i>
+                        </span>
+                        <div>
+                            <p class="text-sm text-gray-700">{{ $log->description }}</p>
+                            <p class="text-xs text-gray-400 mt-0.5">{{ $log->created_at->diffForHumans() }}</p>
+                        </div>
+                    </li>
+                    @empty
+                    <li class="text-sm text-gray-400 text-center py-6">Belum ada aktivitas tercatat.</li>
+                    @endforelse
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@endsection

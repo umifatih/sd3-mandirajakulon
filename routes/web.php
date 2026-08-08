@@ -78,7 +78,27 @@ Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->name('admin.dashboard');
 
+// Route::get('/admin/berita', function () {
+//     return view('admin.berita.index');
+// })->name('admin.berita.index');
+
 // 4. Logout Dummy (Kembali ke Halaman Login)
 Route::post('/keluar/sdn3-mandirajakulon', function () {
     return redirect()->route('admin.login');
 })->name('admin.logout');
+
+use App\Http\Controllers\Admin\BeritaController;
+use App\Http\Controllers\Admin\WargaController;
+use App\Http\Controllers\Admin\ProfilController;
+use App\Http\Controllers\Admin\SaranaController;
+use App\Http\Controllers\Admin\KalenderController;
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    Route::resource('berita', BeritaController::class);
+    Route::resource('warga', WargaController::class);
+    Route::resource('sarana', SaranaController::class);
+    Route::resource('kalender', KalenderController::class);
+    
+    Route::get('/profil', [ProfilController::class, 'edit'])->name('profil.edit');
+    Route::put('/profil', [ProfilController::class, 'update'])->name('profil.update');
+});
